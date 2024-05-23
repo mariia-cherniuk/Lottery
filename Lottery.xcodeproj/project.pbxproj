@@ -12,8 +12,6 @@
 		37E2C3532BFF9F57005C7A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E2C3522BFF9F57005C7A88 /* Assets.xcassets */; };
 		37E2C3562BFF9F57005C7A88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E2C3552BFF9F57005C7A88 /* Preview Assets.xcassets */; };
 		37E2C3602BFF9F58005C7A88 /* LotteryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2C35F2BFF9F58005C7A88 /* LotteryTests.swift */; };
-		37E2C36A2BFF9F58005C7A88 /* LotteryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2C3692BFF9F58005C7A88 /* LotteryUITests.swift */; };
-		37E2C36C2BFF9F58005C7A88 /* LotteryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2C36B2BFF9F58005C7A88 /* LotteryUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +40,6 @@
 		37E2C35B2BFF9F58005C7A88 /* LotteryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LotteryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E2C35F2BFF9F58005C7A88 /* LotteryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryTests.swift; sourceTree = "<group>"; };
 		37E2C3652BFF9F58005C7A88 /* LotteryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LotteryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		37E2C3692BFF9F58005C7A88 /* LotteryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryUITests.swift; sourceTree = "<group>"; };
-		37E2C36B2BFF9F58005C7A88 /* LotteryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +72,6 @@
 			children = (
 				37E2C34D2BFF9F57005C7A88 /* Lottery */,
 				37E2C35E2BFF9F58005C7A88 /* LotteryTests */,
-				37E2C3682BFF9F58005C7A88 /* LotteryUITests */,
 				37E2C34C2BFF9F57005C7A88 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,15 +111,6 @@
 				37E2C35F2BFF9F58005C7A88 /* LotteryTests.swift */,
 			);
 			path = LotteryTests;
-			sourceTree = "<group>";
-		};
-		37E2C3682BFF9F58005C7A88 /* LotteryUITests */ = {
-			isa = PBXGroup;
-			children = (
-				37E2C3692BFF9F58005C7A88 /* LotteryUITests.swift */,
-				37E2C36B2BFF9F58005C7A88 /* LotteryUITestsLaunchTests.swift */,
-			);
-			path = LotteryUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,8 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37E2C36C2BFF9F58005C7A88 /* LotteryUITestsLaunchTests.swift in Sources */,
-				37E2C36A2BFF9F58005C7A88 /* LotteryUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
