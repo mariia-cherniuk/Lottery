@@ -1,12 +1,14 @@
 import Foundation
 
-protocol FileDataManaging {
+public protocol FileDataManaging {
     func read(from url: URL) throws -> Data
 }
 
-struct FileDataManager: FileDataManaging {
+public struct FileDataManager: FileDataManaging {
     
-    func read(from url: URL) throws -> Data {
+    public init() {}
+    
+    public func read(from url: URL) throws -> Data {
         try Data(contentsOf: url)
     }
 }

@@ -8,15 +8,15 @@ public enum JSONError: Error {
     case unableToReadFromURL, unableToDecode
 }
 
-struct JSONService: JSONServiceProtocol {
+public struct JSONService: JSONServiceProtocol {
     
     private let fileManager: FileDataManaging
     
-    init(fileManager: FileDataManaging) {
+    public init(fileManager: FileDataManaging) {
         self.fileManager = fileManager
     }
     
-    func fetch<T: Decodable>(from url: URL) -> Result<T, JSONError> {
+    public func fetch<T: Decodable>(from url: URL) -> Result<T, JSONError> {
         guard let data = try? fileManager.read(from: url) else {
             print("Unable to read content of: \(url)") //TODO: Implement logger
             return .failure(.unableToReadFromURL)
