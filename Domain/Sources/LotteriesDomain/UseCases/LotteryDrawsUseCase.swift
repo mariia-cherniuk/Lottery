@@ -7,11 +7,13 @@ public protocol LotteryDrawsUseCaseProtocol {
 
 final class LotteryDrawsUseCase: LotteryDrawsUseCaseProtocol {
     
-    private let url = Bundle.module.url(forResource: "lotteries", withExtension: "json")
+    private let url: URL?
     private let jsonService: JSONServiceProtocol
     
-    init(jsonService: JSONServiceProtocol) {
+    init(jsonService: JSONServiceProtocol,
+         url: URL? = Bundle.module.url(forResource: "lotteries", withExtension: "json")) {
         self.jsonService = jsonService
+        self.url = url
     }
     
     func fetch() throws -> LotteriesResponse {
