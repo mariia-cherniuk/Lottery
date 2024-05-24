@@ -7,8 +7,7 @@ public protocol LotteryListUseCaseProtocol {
 
 final class LotteryListUseCase: LotteryListUseCaseProtocol {
     
-    //TODO: Avoid force unwrapping; instead, throw an error and handle it within the view model
-    private let url = Bundle.module.url(forResource: "lotteries", withExtension: "json")!
+    private let url = Bundle.module.url(forResource: "lotteries", withExtension: "json")
     private let jsonService: JSONServiceProtocol
     
     init(jsonService: JSONServiceProtocol) {
@@ -16,6 +15,26 @@ final class LotteryListUseCase: LotteryListUseCaseProtocol {
     }
     
     func fetch() throws -> LotteriesResponse {
-        try jsonService.fetch(from: url)
+        guard let url else { throw DomainError.resourceCouldNotBeFound }
+        
+        do {
+            return try jsonService.fetch(from: url)
+        } catch {
+            throw map(error: error)
+        }
+    }
+}
+
+
+private extension LotteryListUseCase {
+    
+    private func map(error: Error) -> DomainError {
+        guard let error = error as? JSONError else { return .other }
+        switch error {
+        case .unableToReadFromURL:
+            return .unableToReadFromURL
+        default:
+            return .other
+        }
     }
 }

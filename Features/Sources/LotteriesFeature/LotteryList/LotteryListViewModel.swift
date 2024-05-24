@@ -29,9 +29,11 @@ private extension LotteryListViewModel {
         do {
             let result = try useCase.fetch()
             state = .loaded
+        } catch DomainError.unableToReadFromURL {
+            state = .error(errorViewModel(message: "Unable to fetch lotteries."))
         } catch {
-            state = .error(errorViewModel(message: error.localizedDescription))
-            print(error) // TODO: Handle error state
+            //TODO: Handle other errors according to the specific requirements of the app
+            state = .error(errorViewModel(message: "Smth went wrong, please try again."))
         }
     }
     

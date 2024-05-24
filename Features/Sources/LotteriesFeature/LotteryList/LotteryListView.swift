@@ -34,4 +34,10 @@ private extension LotteryListView {
             ErrorView(viewModel: model)
         }
     }
+    
+    var loaded: some View {
+        VStack {
+            Text("yest")
+        }
+    }
 }
