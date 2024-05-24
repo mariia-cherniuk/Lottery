@@ -23,8 +23,7 @@ public struct JSONService: JSONServiceProtocol {
         }
         
         do {
-            let decoded = try JSONDecoder().decode(T.self, from: data) //TODO: Inject decoder
-            return decoded
+            return try JSONDecoder().decode(T.self, from: data) //TODO: Inject decoder
         } catch {
             print("Unable to decode content of: \(error.localizedDescription)") //TODO: Implement logger
             throw JSONError.unableToDecode
