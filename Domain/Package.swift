@@ -11,16 +11,26 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "Domain",
-            targets: ["Domain"]),
+            name: "LotteriesDomain",
+            type: .dynamic,
+            targets: ["LotteriesDomain"]),
+    ],
+    dependencies: [
+        // Dependencies declare other packages that this package depends on.
+        // .package(url: /* package url */, from: "1.0.0"),
+        .package(name: "Core", path: "../Core")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "Domain"),
+            name: "LotteriesDomain",
+            dependencies: [
+                .product(name: "JSONService", package: "Core")
+            ]),
         .testTarget(
-            name: "DomainTests",
-            dependencies: ["Domain"]),
+            name: "LotteriesDomainTests",
+            dependencies: ["LotteriesDomain"]),
     ]
 )
+

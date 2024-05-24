@@ -1,7 +1,7 @@
 import XCTest
-@testable import Domain
+@testable import Core
 
-final class DomainTests: XCTestCase {
+final class JSONServiceTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest

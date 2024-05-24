@@ -1,7 +1,7 @@
 import XCTest
-@testable import Core
+@testable import Domain
 
-final class CoreTests: XCTestCase {
+final class LotteriesDomainTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest

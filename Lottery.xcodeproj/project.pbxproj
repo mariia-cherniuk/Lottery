@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		373C5D092C00C40C0084DAA4 /* JSONService in Frameworks */ = {isa = PBXBuildFile; productRef = 373C5D082C00C40C0084DAA4 /* JSONService */; };
+		373C5D0B2C00C4100084DAA4 /* LotteriesDomain in Frameworks */ = {isa = PBXBuildFile; productRef = 373C5D0A2C00C4100084DAA4 /* LotteriesDomain */; };
 		37E2C34F2BFF9F57005C7A88 /* LotteryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2C34E2BFF9F57005C7A88 /* LotteryApp.swift */; };
 		37E2C3512BFF9F57005C7A88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2C3502BFF9F57005C7A88 /* ContentView.swift */; };
 		37E2C3532BFF9F57005C7A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E2C3522BFF9F57005C7A88 /* Assets.xcassets */; };
 		37E2C3562BFF9F57005C7A88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E2C3552BFF9F57005C7A88 /* Preview Assets.xcassets */; };
 		37E2C3602BFF9F58005C7A88 /* LotteryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2C35F2BFF9F58005C7A88 /* LotteryTests.swift */; };
-		37E2C37C2BFFA1F1005C7A88 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 37E2C37B2BFFA1F1005C7A88 /* Core */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37E2C37C2BFFA1F1005C7A88 /* Core in Frameworks */,
+				373C5D0B2C00C4100084DAA4 /* LotteriesDomain in Frameworks */,
+				373C5D092C00C40C0084DAA4 /* JSONService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +146,8 @@
 			);
 			name = Lottery;
 			packageProductDependencies = (
-				37E2C37B2BFFA1F1005C7A88 /* Core */,
+				373C5D082C00C40C0084DAA4 /* JSONService */,
+				373C5D0A2C00C4100084DAA4 /* LotteriesDomain */,
 			);
 			productName = Lottery;
 			productReference = 37E2C34B2BFF9F57005C7A88 /* Lottery.app */;
@@ -585,9 +588,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		37E2C37B2BFFA1F1005C7A88 /* Core */ = {
+		373C5D082C00C40C0084DAA4 /* JSONService */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Core;
+			productName = JSONService;
+		};
+		373C5D0A2C00C4100084DAA4 /* LotteriesDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LotteriesDomain;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
