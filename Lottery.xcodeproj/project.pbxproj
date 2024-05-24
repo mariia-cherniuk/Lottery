@@ -11,6 +11,8 @@
 		373C5D0B2C00C4100084DAA4 /* LotteriesDomain in Frameworks */ = {isa = PBXBuildFile; productRef = 373C5D0A2C00C4100084DAA4 /* LotteriesDomain */; };
 		373CBC9B2C00C8A5005D24A2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373CBC9A2C00C8A5005D24A2 /* AppCoordinator.swift */; };
 		373CBC9D2C00C9F9005D24A2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373CBC9C2C00C9F9005D24A2 /* Coordinator.swift */; };
+		373CBCA02C00CB5E005D24A2 /* LotteriesFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 373CBC9F2C00CB5E005D24A2 /* LotteriesFeature */; };
+		373CBCA12C00CB5E005D24A2 /* LotteriesFeature in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 373CBC9F2C00CB5E005D24A2 /* LotteriesFeature */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		37E2C34F2BFF9F57005C7A88 /* LotteryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2C34E2BFF9F57005C7A88 /* LotteryApp.swift */; };
 		37E2C3512BFF9F57005C7A88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2C3502BFF9F57005C7A88 /* ContentView.swift */; };
 		37E2C3532BFF9F57005C7A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E2C3522BFF9F57005C7A88 /* Assets.xcassets */; };
@@ -35,10 +37,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		373CBCA22C00CB5E005D24A2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				373CBCA12C00CB5E005D24A2 /* LotteriesFeature in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		373C5D072C00C10F0084DAA4 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		373CBC9A2C00C8A5005D24A2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		373CBC9C2C00C9F9005D24A2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		373CBC9E2C00CA86005D24A2 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
 		37E2C34B2BFF9F57005C7A88 /* Lottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E2C34E2BFF9F57005C7A88 /* LotteryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryApp.swift; sourceTree = "<group>"; };
 		37E2C3502BFF9F57005C7A88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +74,7 @@
 			files = (
 				373C5D0B2C00C4100084DAA4 /* LotteriesDomain in Frameworks */,
 				373C5D092C00C40C0084DAA4 /* JSONService in Frameworks */,
+				373CBCA02C00CB5E005D24A2 /* LotteriesFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +107,7 @@
 		37E2C3422BFF9F57005C7A88 = {
 			isa = PBXGroup;
 			children = (
+				373CBC9E2C00CA86005D24A2 /* Features */,
 				373C5D072C00C10F0084DAA4 /* Domain */,
 				37E2C3792BFFA1CD005C7A88 /* Core */,
 				37E2C34D2BFF9F57005C7A88 /* Lottery */,
@@ -153,6 +172,7 @@
 				37E2C3472BFF9F57005C7A88 /* Sources */,
 				37E2C3482BFF9F57005C7A88 /* Frameworks */,
 				37E2C3492BFF9F57005C7A88 /* Resources */,
+				373CBCA22C00CB5E005D24A2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,6 +182,7 @@
 			packageProductDependencies = (
 				373C5D082C00C40C0084DAA4 /* JSONService */,
 				373C5D0A2C00C4100084DAA4 /* LotteriesDomain */,
+				373CBC9F2C00CB5E005D24A2 /* LotteriesFeature */,
 			);
 			productName = Lottery;
 			productReference = 37E2C34B2BFF9F57005C7A88 /* Lottery.app */;
@@ -611,6 +632,10 @@
 		373C5D0A2C00C4100084DAA4 /* LotteriesDomain */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = LotteriesDomain;
+		};
+		373CBC9F2C00CB5E005D24A2 /* LotteriesFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LotteriesFeature;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
