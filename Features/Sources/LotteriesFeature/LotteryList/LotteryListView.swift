@@ -10,6 +10,7 @@ public struct LotteryListView: View {
     
     public var body: some View {
         Text("LotteryListView")
+            .onAppear(perform: viewModel.onAppear)
     }
 }
 
