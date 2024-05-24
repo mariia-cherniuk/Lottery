@@ -1,10 +1,10 @@
 import Foundation
 
-protocol JSONServiceProtocol {
+public protocol JSONServiceProtocol {
     func fetch<T: Decodable>(from url: URL) -> Result<T, JSONError>
 }
 
-enum JSONError: Error {
+public enum JSONError: Error {
     case unableToReadFromURL, unableToDecode
 }
 
