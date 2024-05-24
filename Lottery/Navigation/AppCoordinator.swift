@@ -7,6 +7,7 @@ final class AppCoordinator {
     
     private let useCaseFactory = UseCaseFactory(fileManager: FileDataManager())
     
+    @MainActor
     func makeRootView() -> some View {
         let coordinator = Coordinator(useCaseFactory: useCaseFactory)
         let useCase = useCaseFactory.makeLotteryListUseCase()

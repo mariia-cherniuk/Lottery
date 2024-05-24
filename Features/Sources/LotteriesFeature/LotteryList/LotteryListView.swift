@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignLibrary
 
 public struct LotteryListView: View {
     
@@ -9,8 +10,28 @@ public struct LotteryListView: View {
     }
     
     public var body: some View {
-        Text("LotteryListView")
+        content
             .onAppear(perform: viewModel.onAppear)
     }
 }
 
+private extension LotteryListView {
+    
+    @ViewBuilder
+    var content: some View {
+        switch viewModel.state {
+        case .idle:
+            Color.clear
+            
+        case .loading:
+            ActivityIndicator()
+                .frame(width: 50.0)
+            
+        case .loaded:
+            Text("Loaded")
+            
+        case .error(let model):
+            ErrorView(viewModel: model)
+        }
+    }
+}
