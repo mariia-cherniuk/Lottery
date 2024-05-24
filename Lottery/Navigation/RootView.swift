@@ -1,18 +1,27 @@
-//
-//  RootView.swift
-//  Lottery
-//
-//  Created by Mariia Cherniuk on 24/05/2024.
-//
-
 import SwiftUI
+import LotteriesFeature
 
 struct RootView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    
+    private let viewModel: LotteryListViewModel
+    
+    @ObservedObject private var coordinator: Coordinator
+    
+    init(viewModel: LotteryListViewModel, coordinator: Coordinator) {
+        self.viewModel = viewModel
+        self.coordinator = coordinator
     }
-}
-
-#Preview {
-    RootView()
+    
+    var body: some View {
+        NavigationStack(path: $coordinator.destinations) {
+            LotteryListView(viewModel: viewModel)
+                .navigationDestination(for: Coordinator.Destination.self) { destination in
+                    switch destination {
+                    case .detail:
+                        Text("details")
+                    }
+                }
+                .navigationBarTitleDisplayMode(.inline)
+        }
+    }
 }

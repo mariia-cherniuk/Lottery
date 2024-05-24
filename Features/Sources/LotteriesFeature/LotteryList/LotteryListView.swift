@@ -1,18 +1,15 @@
-//
-//  SwiftUIView.swift
-//  
-//
-//  Created by Mariia Cherniuk on 24/05/2024.
-//
-
 import SwiftUI
 
-struct SwiftUIView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+public struct LotteryListView: View {
+    
+    private let viewModel: LotteryListViewModel
+    
+    public init(viewModel: LotteryListViewModel) {
+        self.viewModel = viewModel
+    }
+    
+    public var body: some View {
+        Text("LotteryListView")
     }
 }
 
-#Preview {
-    SwiftUIView()
-}

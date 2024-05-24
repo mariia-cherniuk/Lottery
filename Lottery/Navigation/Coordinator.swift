@@ -4,7 +4,7 @@ import SwiftUI
 final class Coordinator: ObservableObject {
     
     enum Destination: Hashable {
-        case detail(Int)
+        case detail
     }
     
     @Published var destinations: [Destination] = []
@@ -14,7 +14,7 @@ final class Coordinator: ObservableObject {
         self.useCaseFactory = useCaseFactory
     }
     
-    func showDetails(id: Int) {
-        destinations.append(.detail(id))
+    func showDetails() {
+        destinations.append(.detail)
     }
 }
