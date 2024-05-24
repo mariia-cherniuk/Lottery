@@ -6,7 +6,7 @@ import DesignLibrary
 public final class LotteryDrawsViewModel: ObservableObject {
     
     enum State {
-        case idle, loading, loaded, error(ErrorViewModel)
+        case idle, loading, loaded([LotteryDraw]), error(ErrorViewModel)
     }
     
     @Published var state: State = .idle
@@ -28,7 +28,7 @@ private extension LotteryDrawsViewModel {
     func fetchLotteries() {
         do {
             let result = try useCase.fetch()
-            state = .loaded
+            state = .loaded(lotteryDraws(from: result.draws) )
         } catch DomainError.unableToReadFromURL {
             state = .error(errorViewModel(message: "Unable to fetch lotteries."))
         } catch {
@@ -41,5 +41,9 @@ private extension LotteryDrawsViewModel {
         ErrorViewModel(title: "Oh no 😢", message: message, actionTitle: "Retry") { [weak self] in
             self?.onAppear()
         }
+    }
+    
+    func lotteryDraws(from lotteries: [Lottery]) -> [LotteryDraw] {
+        lotteries.map { LotteryDraw(draw: $0) }
     }
 }

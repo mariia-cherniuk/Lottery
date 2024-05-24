@@ -27,17 +27,24 @@ private extension LotteryDrawsView {
             ActivityIndicator()
                 .frame(width: 50.0)
             
-        case .loaded:
-            Text("Loaded")
+        case .loaded(let lotteryDraws):
+            loaded(lotteryDraws: lotteryDraws)
             
         case .error(let model):
             ErrorView(viewModel: model)
         }
     }
     
-    var loaded: some View {
-        VStack {
-            Text("yest")
+    func loaded(lotteryDraws: [LotteryDraw]) -> some View {
+        ScrollView(.vertical) {
+            LazyVStack(spacing: .spacing.large) {
+                ForEach(lotteryDraws, id: \.id) { lotteryDraw in
+                    LotteryDrawView(viewModel: lotteryDraw)
+                        .onTapGesture {
+                            //TODO: Handle tap
+                        }
+                }
+            }
         }
     }
 }
