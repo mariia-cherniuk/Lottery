@@ -3,7 +3,7 @@ import LotteriesDomain
 import DesignLibrary
 
 @MainActor
-public final class LotteryListViewModel: ObservableObject {
+public final class LotteryDrawsViewModel: ObservableObject {
     
     enum State {
         case idle, loading, loaded, error(ErrorViewModel)
@@ -11,9 +11,9 @@ public final class LotteryListViewModel: ObservableObject {
     
     @Published var state: State = .idle
     
-    private let useCase: LotteryListUseCaseProtocol
+    private let useCase: LotteryDrawsUseCaseProtocol
     
-    public init(useCase: LotteryListUseCaseProtocol) {
+    public init(useCase: LotteryDrawsUseCaseProtocol) {
         self.useCase = useCase
     }
     
@@ -23,7 +23,7 @@ public final class LotteryListViewModel: ObservableObject {
     }
 }
 
-private extension LotteryListViewModel {
+private extension LotteryDrawsViewModel {
     
     func fetchLotteries() {
         do {

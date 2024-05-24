@@ -8,7 +8,7 @@ public final class UseCaseFactory {
         self.fileManager = fileManager
     }
     
-    public func makeLotteryListUseCase() -> LotteryListUseCaseProtocol {
-        LotteryListUseCase(jsonService: JSONService(fileManager: fileManager))
+    public func makeLotteryDrawsUseCase() -> LotteryDrawsUseCaseProtocol {
+        LotteryDrawsUseCase(jsonService: JSONService(fileManager: fileManager))
     }
 }

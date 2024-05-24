@@ -1,11 +1,11 @@
 import Foundation
 import JSONService
 
-public protocol LotteryListUseCaseProtocol {
+public protocol LotteryDrawsUseCaseProtocol {
     func fetch() throws -> LotteriesResponse
 }
 
-final class LotteryListUseCase: LotteryListUseCaseProtocol {
+final class LotteryDrawsUseCase: LotteryDrawsUseCaseProtocol {
     
     private let url = Bundle.module.url(forResource: "lotteries", withExtension: "json")
     private let jsonService: JSONServiceProtocol
@@ -26,7 +26,7 @@ final class LotteryListUseCase: LotteryListUseCaseProtocol {
 }
 
 
-private extension LotteryListUseCase {
+private extension LotteryDrawsUseCase {
     
     private func map(error: Error) -> DomainError {
         guard let error = error as? JSONError else { return .other }

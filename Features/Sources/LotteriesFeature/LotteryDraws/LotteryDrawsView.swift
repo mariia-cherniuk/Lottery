@@ -1,11 +1,11 @@
 import SwiftUI
 import DesignLibrary
 
-public struct LotteryListView: View {
+public struct LotteryDrawsView: View {
     
-    @ObservedObject private var viewModel: LotteryListViewModel
+    @ObservedObject private var viewModel: LotteryDrawsViewModel
     
-    public init(viewModel: LotteryListViewModel) {
+    public init(viewModel: LotteryDrawsViewModel) {
         self.viewModel = viewModel
     }
     
@@ -15,7 +15,7 @@ public struct LotteryListView: View {
     }
 }
 
-private extension LotteryListView {
+private extension LotteryDrawsView {
     
     @ViewBuilder
     var content: some View {
