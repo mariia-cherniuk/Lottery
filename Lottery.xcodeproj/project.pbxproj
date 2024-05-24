@@ -33,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		373C5D072C00C10F0084DAA4 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		37E2C34B2BFF9F57005C7A88 /* Lottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E2C34E2BFF9F57005C7A88 /* LotteryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryApp.swift; sourceTree = "<group>"; };
 		37E2C3502BFF9F57005C7A88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		37E2C3422BFF9F57005C7A88 = {
 			isa = PBXGroup;
 			children = (
+				373C5D072C00C10F0084DAA4 /* Domain */,
 				37E2C3792BFFA1CD005C7A88 /* Core */,
 				37E2C34D2BFF9F57005C7A88 /* Lottery */,
 				37E2C35E2BFF9F58005C7A88 /* LotteryTests */,
