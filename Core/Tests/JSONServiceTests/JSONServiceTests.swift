@@ -45,7 +45,7 @@ final class JSONServiceTests: XCTestCase {
         
         do {
             let _: MockData = try service.fetch(from: fakeURL)
-            return XCTFail("Result should error")
+            return XCTFail("Should throw an erron")
         } catch {
             guard let capturedError = error as? JSONError else {
                 return XCTFail("Error should be JSONError")
@@ -64,7 +64,7 @@ final class JSONServiceTests: XCTestCase {
         
         do {
             let _: MockData = try service.fetch(from: fakeURL)
-            return XCTFail("Result should error")
+            return XCTFail("Should throw an erron")
         } catch {
             guard let capturedError = error as? JSONError else {
                 return XCTFail("Error should be JSONError")
