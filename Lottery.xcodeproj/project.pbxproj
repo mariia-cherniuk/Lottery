@@ -100,7 +100,6 @@
 			children = (
 				373CBC9A2C00C8A5005D24A2 /* AppCoordinator.swift */,
 				373CBC9C2C00C9F9005D24A2 /* Coordinator.swift */,
-				373CBCA32C00D0BF005D24A2 /* RootView.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -132,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				373CBC992C00C897005D24A2 /* Navigation */,
+				373CBCA32C00D0BF005D24A2 /* RootView.swift */,
 				37E2C34E2BFF9F57005C7A88 /* LotteryApp.swift */,
 				37E2C3522BFF9F57005C7A88 /* Assets.xcassets */,
 				37E2C3542BFF9F57005C7A88 /* Preview Content */,
