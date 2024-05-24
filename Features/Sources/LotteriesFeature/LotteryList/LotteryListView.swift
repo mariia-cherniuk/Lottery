@@ -2,7 +2,7 @@ import SwiftUI
 
 public struct LotteryListView: View {
     
-    private let viewModel: LotteryListViewModel
+    @ObservedObject private var viewModel: LotteryListViewModel
     
     public init(viewModel: LotteryListViewModel) {
         self.viewModel = viewModel

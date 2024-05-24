@@ -1,6 +1,13 @@
+import Combine
 import LotteriesDomain
 
-public final class LotteryListViewModel {
+public final class LotteryListViewModel: ObservableObject {
+    
+    enum State {
+        case idle, loading, loaded, error
+    }
+    
+    @Published var state: State = .idle
     
     private let useCase: LotteryListUseCaseProtocol
     
@@ -9,6 +16,7 @@ public final class LotteryListViewModel {
     }
     
     func onAppear() {
+        state = .loading
         fetchLotteries()
     }
 }
@@ -18,8 +26,9 @@ private extension LotteryListViewModel {
     func fetchLotteries() {
         do {
             let result = try useCase.fetch()
-            print(result)
+            state = .loaded
         } catch {
+            state = .error
             print(error) // TODO: Handle error state
         }
     }
