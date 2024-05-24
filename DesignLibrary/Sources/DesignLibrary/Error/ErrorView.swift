@@ -9,7 +9,7 @@ public struct ErrorView: View {
     }
     
     public var body: some View {
-        VStack(spacing: 16.0) {
+        VStack(spacing: .spacing.large) {
             Group {
                 Text(viewModel.title)
                     .font(.headline)
@@ -24,7 +24,7 @@ public struct ErrorView: View {
             
             button
         }
-        .padding(16.0)
+        .padding(.large)
         .background(Color.gray.opacity(0.1))
         .cornerRadius(15)
     }
@@ -35,7 +35,7 @@ public struct ErrorView: View {
                 await viewModel.action()
             }
         }
-        .padding(16.0)
+        .padding(.large)
         .background(Color.blue)
         .foregroundColor(.white)
         .cornerRadius(10)
