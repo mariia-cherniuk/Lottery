@@ -12,14 +12,20 @@ public final class LotteryDrawsViewModel: ObservableObject {
     @Published var state: State = .idle
     
     private let useCase: LotteryDrawsUseCaseProtocol
+    private let coordinator: LotteriesCoordinating
     
-    public init(useCase: LotteryDrawsUseCaseProtocol) {
+    public init(useCase: LotteryDrawsUseCaseProtocol, coordinator: LotteriesCoordinating) {
         self.useCase = useCase
+        self.coordinator = coordinator
     }
     
     func onAppear() {
         state = .loading
         fetchLotteries()
+    }
+    
+    func onTapLotteryDraw() {
+        coordinator.showDetails()
     }
 }
 

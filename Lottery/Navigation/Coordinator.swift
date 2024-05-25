@@ -1,7 +1,8 @@
 import LotteriesDomain
+import LotteriesFeature
 import SwiftUI
 
-final class Coordinator: ObservableObject {
+final class Coordinator: ObservableObject, LotteriesCoordinating {
     
     enum Destination: Hashable {
         case detail

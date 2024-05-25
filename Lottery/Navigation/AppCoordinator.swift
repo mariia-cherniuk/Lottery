@@ -11,7 +11,7 @@ final class AppCoordinator {
     func makeRootView() -> some View {
         let coordinator = Coordinator(useCaseFactory: useCaseFactory)
         let useCase = useCaseFactory.makeLotteryDrawsUseCase()
-        let viewModel = LotteryDrawsViewModel(useCase: useCase)
+        let viewModel = LotteryDrawsViewModel(useCase: useCase, coordinator: coordinator)
         return RootView(viewModel: viewModel, coordinator: coordinator)
     }
 }
