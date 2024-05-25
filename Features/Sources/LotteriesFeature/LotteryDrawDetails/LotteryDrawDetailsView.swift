@@ -9,6 +9,14 @@ public struct LotteryDrawDetailsView: View {
     }
     
     public var body: some View {
+        content
+            .navigationTitle("Lottery Draw Details")
+    }
+}
+
+private extension LotteryDrawDetailsView {
+    
+    var content: some View {
         HStack(spacing: .spacing.large) {
             Text("Details")
             Spacer()
