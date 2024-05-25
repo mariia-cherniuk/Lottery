@@ -44,6 +44,13 @@
         "identifier" : "LotteriesFeatureTests",
         "name" : "LotteriesFeatureTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Core",
+        "identifier" : "NetworkManagementTests",
+        "name" : "NetworkManagementTests"
+      }
     }
   ],
   "version" : 1
