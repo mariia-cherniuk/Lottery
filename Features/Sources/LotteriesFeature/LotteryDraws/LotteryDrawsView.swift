@@ -12,7 +12,7 @@ public struct LotteryDrawsView: View {
     public var body: some View {
         content
             .onAppear(perform: viewModel.onAppear)
-            .navigationTitle("Your Lottery Draws")
+            .navigationTitle("Lottery Draws")
     }
 }
 

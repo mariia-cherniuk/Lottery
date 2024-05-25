@@ -10,16 +10,16 @@ public struct BallView: View {
     
     public var body: some View {
         Text(viewModel.number)
-            .font(.largeTitle)
+            .font(.title3)
             .fontWeight(.bold)
             .foregroundColor(.white)
-            .frame(width: 100, height: 100)
+            .frame(width: 50, height: 50)
             .background(viewModel.colour)
             .clipShape(Circle())
             .overlay(
                 Circle().stroke(Color.white, lineWidth: 4)
             )
-            .shadow(radius: 10)
+            .shadow(radius: 4)
             .accessibilityElement(children: .combine)
     }
 }

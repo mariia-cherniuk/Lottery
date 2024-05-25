@@ -22,8 +22,9 @@ private extension LotteryDrawDetailsView {
     
     var content: some View {
         VStack(spacing: .spacing.large) {
-            header
             lotteryBalls
+            header
+            button
         }
     }
     
@@ -33,7 +34,7 @@ private extension LotteryDrawDetailsView {
     
     var lotteryBalls: some View {
         VStack(alignment: .leading, spacing: .spacing.large) {
-            title(message: "Your numbers")
+            title(message: "Results")
             lotteryBallsView
         }
     }
@@ -46,5 +47,11 @@ private extension LotteryDrawDetailsView {
         Text(message)
             .font(.title2)
             .bold()
+    }
+    
+    var button: some View {
+        Button("Generate ticket") {
+            //TODO: Implement tap
+        }
     }
 }
