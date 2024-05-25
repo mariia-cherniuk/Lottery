@@ -11,7 +11,7 @@ final class LotteryDrawsUseCase: LotteryDrawsUseCaseProtocol {
     private let jsonService: JSONServiceProtocol
     
     init(jsonService: JSONServiceProtocol,
-         url: URL? = Bundle.module.url(forResource: "lotteries", withExtension: "json")) {
+         url: URL? = Bundle.main.url(forResource: "lotteries", withExtension: "json")) {
         self.jsonService = jsonService
         self.url = url
     }

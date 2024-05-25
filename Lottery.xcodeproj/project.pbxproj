@@ -22,6 +22,8 @@
 		377D5F132C0233FE00D47398 /* JSONService in Frameworks */ = {isa = PBXBuildFile; productRef = 377D5F122C0233FE00D47398 /* JSONService */; };
 		377D5F142C0233FE00D47398 /* JSONService in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 377D5F122C0233FE00D47398 /* JSONService */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		377D5F172C024A7200D47398 /* Lottery+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D5F162C024A7200D47398 /* Lottery+Extensions.swift */; };
+		377D5F192C02811A00D47398 /* NetworkManagement in Frameworks */ = {isa = PBXBuildFile; productRef = 377D5F182C02811A00D47398 /* NetworkManagement */; };
+		377D5F1A2C02811A00D47398 /* NetworkManagement in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 377D5F182C02811A00D47398 /* NetworkManagement */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		37E2C34F2BFF9F57005C7A88 /* LotteryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2C34E2BFF9F57005C7A88 /* LotteryApp.swift */; };
 		37E2C3532BFF9F57005C7A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E2C3522BFF9F57005C7A88 /* Assets.xcassets */; };
 		37E2C3562BFF9F57005C7A88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E2C3552BFF9F57005C7A88 /* Preview Assets.xcassets */; };
@@ -44,6 +46,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				377D5F1A2C02811A00D47398 /* NetworkManagement in Embed Frameworks */,
 				373CBCA12C00CB5E005D24A2 /* LotteriesFeature in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -88,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				373CBCA92C00F9E8005D24A2 /* DesignLibrary in Frameworks */,
+				377D5F192C02811A00D47398 /* NetworkManagement in Frameworks */,
 				373C5D0B2C00C4100084DAA4 /* LotteriesDomain in Frameworks */,
 				373C5D092C00C40C0084DAA4 /* JSONService in Frameworks */,
 				373CBCA02C00CB5E005D24A2 /* LotteriesFeature in Frameworks */,
@@ -222,6 +226,7 @@
 				373C5D0A2C00C4100084DAA4 /* LotteriesDomain */,
 				373CBC9F2C00CB5E005D24A2 /* LotteriesFeature */,
 				373CBCA82C00F9E8005D24A2 /* DesignLibrary */,
+				377D5F182C02811A00D47398 /* NetworkManagement */,
 			);
 			productName = Lottery;
 			productReference = 37E2C34B2BFF9F57005C7A88 /* Lottery.app */;
@@ -617,6 +622,10 @@
 		377D5F122C0233FE00D47398 /* JSONService */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = JSONService;
+		};
+		377D5F182C02811A00D47398 /* NetworkManagement */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkManagement;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

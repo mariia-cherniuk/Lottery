@@ -27,9 +27,6 @@ let package = Package(
             name: "LotteriesDomain",
             dependencies: [
                 .product(name: "JSONService", package: "Core")
-            ],
-            resources: [
-                .process("Resources")
             ]
         ),
         .testTarget(

@@ -14,12 +14,19 @@ let package = Package(
             name: "JSONService",
             type: .dynamic,
             targets: ["JSONService"]),
+        .library(
+            name: "NetworkManagement",
+            type: .dynamic,
+            targets: ["NetworkManagement"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "JSONService",
+            dependencies: []),
+        .target(
+            name: "NetworkManagement",
             dependencies: []),
         .testTarget(
             name: "JSONServiceTests",
