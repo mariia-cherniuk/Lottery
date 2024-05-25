@@ -4,8 +4,8 @@ import Storage
 
 protocol LotteriesStorable {
     func fetchAll() throws -> [Lottery]
-    func save(character: Lottery) throws
-    func contains(character: Lottery) -> Bool
+    func save(_ items: [Lottery]) throws
+    func contains(_ item: Lottery) -> Bool
 }
 
 final class LotteriesStore: LotteriesStorable {
@@ -22,14 +22,12 @@ final class LotteriesStore: LotteriesStorable {
         try storage.getValue(for: storeKey) ?? []
     }
     
-    func save(character: Lottery) throws {
-        var all = try fetchAll()
-        all.insert(character, at: 0)
-        try storage.store(value: all, for: storeKey)
+    func save(_ items: [Lottery]) throws {
+        try storage.store(value: items, for: storeKey)
     }
     
-    func contains(character: Lottery) -> Bool {
+    func contains(_ item: Lottery) -> Bool {
         let all = (try? fetchAll()) ?? []
-        return all.contains(where: { $0.id == character.id })
+        return all.contains(where: { $0.id == item.id })
     }
 }

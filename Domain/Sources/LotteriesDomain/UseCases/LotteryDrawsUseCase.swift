@@ -2,7 +2,7 @@ import Foundation
 import NetworkManagement
 
 public protocol LotteryDrawsUseCaseProtocol {
-    func fetch() async throws -> LotteriesResponse
+    func fetch() async throws -> [Lottery]
 }
 
 final class LotteryDrawsUseCase: LotteryDrawsUseCaseProtocol {
@@ -17,13 +17,15 @@ final class LotteryDrawsUseCase: LotteryDrawsUseCaseProtocol {
         self.lotteriesStorage = lotteriesStorage
     }
     
-    func fetch() async throws -> LotteriesResponse {
+    func fetch() async throws -> [Lottery] {
         do {
             let data = try await dataLoader.fetch(resource: Resource(path: path, method: .GET))
-            return try JSONDecoder().decode(LotteriesResponse.self, from: data)
+            let response = try JSONDecoder().decode(LotteriesResponse.self, from: data)
+            let draws = response.draws
+            try? lotteriesStorage.save(draws) //TODO: ADD logger
+            return draws
         } catch NetworkError.notConnectedToInternet {
-            let lotteries = try lotteriesStorage.fetchAll()
-            return LotteriesResponse(draws: lotteries)
+            return try lotteriesStorage.fetchAll()
         } catch {
             throw DomainError.other
         }
