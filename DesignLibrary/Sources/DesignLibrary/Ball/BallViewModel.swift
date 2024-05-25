@@ -2,8 +2,8 @@ import SwiftUI
 
 public struct BallViewModel {
     
-    let number: String
-    let colour: Color
+    public let number: String
+    public let colour: Color
     
     public init(number: String, colour: Color) {
         self.number = number
