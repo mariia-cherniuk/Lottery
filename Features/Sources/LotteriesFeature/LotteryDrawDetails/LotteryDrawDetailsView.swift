@@ -10,6 +10,7 @@ public struct LotteryDrawDetailsView: View {
     
     public var body: some View {
         content
+            .padding(.large)
             .navigationTitle("Lottery Draw Details")
     }
 }
@@ -17,11 +18,21 @@ public struct LotteryDrawDetailsView: View {
 private extension LotteryDrawDetailsView {
     
     var content: some View {
-        HStack(spacing: .spacing.large) {
-            Text("Details")
+        VStack(alignment: .leading, spacing: .spacing.small) {
+            title
             Spacer()
-            Text("Details")
+            lotteryBallsView
         }
         .contentShape(Rectangle())
+    }
+    
+    var title: some View {
+        Text("Your numbers")
+            .font(.title2)
+            .bold()
+    }
+    
+    var lotteryBallsView: some View {
+        LotteryBallsView(ballNumbers: viewModel.numbers)
     }
 }

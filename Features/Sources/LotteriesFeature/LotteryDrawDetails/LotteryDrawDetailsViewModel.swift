@@ -2,7 +2,7 @@ import LotteriesDomain
 
 public final class LotteryDrawDetailsViewModel {
     
-    private lazy var numbers: [String] = {
+    lazy var numbers: [String] = {
         [lottery.number1, lottery.number2, lottery.number3, lottery.number4, lottery.number5, lottery.number6]
     }()
     
