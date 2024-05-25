@@ -21,6 +21,7 @@
 		377D5F112C0233F600D47398 /* LotteriesDomain in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 377D5F0E2C0233F600D47398 /* LotteriesDomain */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		377D5F132C0233FE00D47398 /* JSONService in Frameworks */ = {isa = PBXBuildFile; productRef = 377D5F122C0233FE00D47398 /* JSONService */; };
 		377D5F142C0233FE00D47398 /* JSONService in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 377D5F122C0233FE00D47398 /* JSONService */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		377D5F172C024A7200D47398 /* Lottery+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D5F162C024A7200D47398 /* Lottery+Extensions.swift */; };
 		37E2C34F2BFF9F57005C7A88 /* LotteryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2C34E2BFF9F57005C7A88 /* LotteryApp.swift */; };
 		37E2C3532BFF9F57005C7A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E2C3522BFF9F57005C7A88 /* Assets.xcassets */; };
 		37E2C3562BFF9F57005C7A88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E2C3552BFF9F57005C7A88 /* Preview Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		377D5F072C022E5700D47398 /* Lottery.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Lottery.xctestplan; sourceTree = "<group>"; };
 		377D5F092C02313800D47398 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 		377D5F0C2C02318D00D47398 /* MockFileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFileDataManager.swift; sourceTree = "<group>"; };
+		377D5F162C024A7200D47398 /* Lottery+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lottery+Extensions.swift"; sourceTree = "<group>"; };
 		37E2C34B2BFF9F57005C7A88 /* Lottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E2C34E2BFF9F57005C7A88 /* LotteryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryApp.swift; sourceTree = "<group>"; };
 		37E2C3522BFF9F57005C7A88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +131,14 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		377D5F152C024A6500D47398 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				377D5F162C024A7200D47398 /* Lottery+Extensions.swift */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
 		37E2C3422BFF9F57005C7A88 = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +185,7 @@
 		37E2C35E2BFF9F58005C7A88 /* LotteryTests */ = {
 			isa = PBXGroup;
 			children = (
+				377D5F152C024A6500D47398 /* Fixtures */,
 				377D5F0B2C02317E00D47398 /* Mocks */,
 				377D5F082C0230FC00D47398 /* Navigation */,
 				377D5F072C022E5700D47398 /* Lottery.xctestplan */,
@@ -312,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				377D5F172C024A7200D47398 /* Lottery+Extensions.swift in Sources */,
 				377D5F0A2C02313800D47398 /* CoordinatorTests.swift in Sources */,
 				377D5F0D2C02318D00D47398 /* MockFileDataManager.swift in Sources */,
 			);

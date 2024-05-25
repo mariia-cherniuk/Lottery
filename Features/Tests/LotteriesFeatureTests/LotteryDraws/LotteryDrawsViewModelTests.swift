@@ -9,6 +9,7 @@ final class LotteryDrawsViewModelTests: XCTestCase {
    
     private lazy var lotteriesResponse = LotteriesResponse(draws: [.fixture()])
     
+    private var mockCoordinator: MockLotteriesCoordinator!
     private var mockUseCase: MockLotteryDrawsUseCase!
     private var viewModel: LotteryDrawsViewModel!
     
@@ -16,12 +17,14 @@ final class LotteryDrawsViewModelTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        mockCoordinator = MockLotteriesCoordinator()
         mockUseCase = MockLotteryDrawsUseCase()
-        viewModel = LotteryDrawsViewModel(useCase: mockUseCase)
+        viewModel = LotteryDrawsViewModel(useCase: mockUseCase, coordinator: mockCoordinator)
     }
     
     override func tearDown() {
         cancellables = []
+        mockCoordinator = nil
         mockUseCase = nil
         viewModel = nil
         super.tearDown()
@@ -92,7 +95,7 @@ final class LotteryDrawsViewModelTests: XCTestCase {
             return XCTFail("State should be loaded")
         }
         
-        XCTAssertEqual(lotteryDraws.first?.date, lotteriesResponse.draws.first?.drawDate)
+        XCTAssertEqual(lotteryDraws.first?.date, "15 May 2023")
     }
     
     func testGivenLotteriesResponse_WhenOnAppearIsCalled_ThenStateIsLoaded() {
@@ -116,7 +119,7 @@ final class LotteryDrawsViewModelTests: XCTestCase {
         
         XCTAssertEqual(response.count, 1)
         XCTAssertEqual(response.first?.id, lotteriesResponse.draws.first?.id)
-        XCTAssertEqual(response.first?.date, lotteriesResponse.draws.first?.drawDate)
+        XCTAssertEqual(response.first?.date, "15 May 2023")
     }
     
     // MARK: - Test failure

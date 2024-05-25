@@ -32,6 +32,9 @@ let package = Package(
             ]),
         .testTarget(
             name: "LotteriesFeatureTests",
-            dependencies: ["LotteriesFeature"]),
+            dependencies: [
+                "LotteriesFeature",
+                .product(name: "LotteriesDomain", package: "Domain")
+            ])
     ]
 )

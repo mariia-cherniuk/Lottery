@@ -18,10 +18,15 @@ final class CoordinatorTests: XCTestCase {
     }
     
     func testShowDetails() {
+        let lottery1 = Lottery.fixture(id: "id-1")
+        let lottery2 = Lottery.fixture(id: "id-2")
+        
         XCTAssertEqual(coordinator.destinations, [])
-        coordinator.showDetails()
-        XCTAssertEqual(coordinator.destinations, [.detail])
-        coordinator.showDetails()
-        XCTAssertEqual(coordinator.destinations, [.detail, .detail])
+        coordinator.showDetails(lottery1)
+        
+        XCTAssertEqual(coordinator.destinations, [.detail(lottery1)])
+        coordinator.showDetails(lottery2)
+        
+        XCTAssertEqual(coordinator.destinations, [.detail(lottery1), .detail(lottery2)])
     }
 }
