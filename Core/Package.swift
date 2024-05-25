@@ -14,6 +14,10 @@ let package = Package(
             name: "NetworkManagement",
             type: .dynamic,
             targets: ["NetworkManagement"]),
+        .library(
+            name: "Storage",
+            type: .dynamic,
+            targets: ["Storage"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -21,8 +25,14 @@ let package = Package(
         .target(
             name: "NetworkManagement",
             dependencies: []),
+        .target(
+            name: "Storage",
+            dependencies: []),
         .testTarget(
             name: "NetworkManagementTests",
             dependencies: ["NetworkManagement"]),
+        .testTarget(
+            name: "StorageTests",
+            dependencies: ["Storage"]),
     ]
 )
