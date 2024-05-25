@@ -6,10 +6,8 @@ import LotteriesDomain
 
 @MainActor
 final class LotteryDrawsViewModelTests: XCTestCase {
-    
-    private let lottery = Lottery(id: "id", drawDate: "2023-05-15", number1: "2", number2: "16", number3: "23", number4: "44", number5: "47", number6: "52", bonusBall: "14", topPrize: 4000000000)
    
-    private lazy var lotteriesResponse = LotteriesResponse(draws: [lottery])
+    private lazy var lotteriesResponse = LotteriesResponse(draws: [.fixture()])
     
     private var mockUseCase: MockLotteryDrawsUseCase!
     private var viewModel: LotteryDrawsViewModel!
