@@ -15,21 +15,19 @@
 		373CBCA12C00CB5E005D24A2 /* LotteriesFeature in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 373CBC9F2C00CB5E005D24A2 /* LotteriesFeature */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		373CBCA42C00D0BF005D24A2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373CBCA32C00D0BF005D24A2 /* RootView.swift */; };
 		373CBCA92C00F9E8005D24A2 /* DesignLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 373CBCA82C00F9E8005D24A2 /* DesignLibrary */; };
+		377D5F0A2C02313800D47398 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D5F092C02313800D47398 /* CoordinatorTests.swift */; };
+		377D5F0D2C02318D00D47398 /* MockFileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D5F0C2C02318D00D47398 /* MockFileDataManager.swift */; };
+		377D5F0F2C0233F600D47398 /* LotteriesDomain in Frameworks */ = {isa = PBXBuildFile; productRef = 377D5F0E2C0233F600D47398 /* LotteriesDomain */; };
+		377D5F112C0233F600D47398 /* LotteriesDomain in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 377D5F0E2C0233F600D47398 /* LotteriesDomain */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		377D5F132C0233FE00D47398 /* JSONService in Frameworks */ = {isa = PBXBuildFile; productRef = 377D5F122C0233FE00D47398 /* JSONService */; };
+		377D5F142C0233FE00D47398 /* JSONService in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 377D5F122C0233FE00D47398 /* JSONService */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		37E2C34F2BFF9F57005C7A88 /* LotteryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2C34E2BFF9F57005C7A88 /* LotteryApp.swift */; };
 		37E2C3532BFF9F57005C7A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E2C3522BFF9F57005C7A88 /* Assets.xcassets */; };
 		37E2C3562BFF9F57005C7A88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37E2C3552BFF9F57005C7A88 /* Preview Assets.xcassets */; };
-		37E2C3602BFF9F58005C7A88 /* LotteryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2C35F2BFF9F58005C7A88 /* LotteryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		37E2C35C2BFF9F58005C7A88 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37E2C3432BFF9F57005C7A88 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 37E2C34A2BFF9F57005C7A88;
-			remoteInfo = Lottery;
-		};
-		37E2C3662BFF9F58005C7A88 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 37E2C3432BFF9F57005C7A88 /* Project object */;
 			proxyType = 1;
@@ -50,6 +48,18 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		377D5F102C0233F600D47398 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				377D5F142C0233FE00D47398 /* JSONService in Embed Frameworks */,
+				377D5F112C0233F600D47398 /* LotteriesDomain in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -60,13 +70,13 @@
 		373CBCA32C00D0BF005D24A2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		373CBCA72C00F9BA005D24A2 /* DesignLibrary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DesignLibrary; sourceTree = "<group>"; };
 		377D5F072C022E5700D47398 /* Lottery.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Lottery.xctestplan; sourceTree = "<group>"; };
+		377D5F092C02313800D47398 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
+		377D5F0C2C02318D00D47398 /* MockFileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFileDataManager.swift; sourceTree = "<group>"; };
 		37E2C34B2BFF9F57005C7A88 /* Lottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E2C34E2BFF9F57005C7A88 /* LotteryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryApp.swift; sourceTree = "<group>"; };
 		37E2C3522BFF9F57005C7A88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37E2C3552BFF9F57005C7A88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		37E2C35B2BFF9F58005C7A88 /* LotteryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LotteryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		37E2C35F2BFF9F58005C7A88 /* LotteryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryTests.swift; sourceTree = "<group>"; };
-		37E2C3652BFF9F58005C7A88 /* LotteryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LotteryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E2C3792BFFA1CD005C7A88 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,13 +96,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		37E2C3622BFF9F58005C7A88 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				377D5F132C0233FE00D47398 /* JSONService in Frameworks */,
+				377D5F0F2C0233F600D47398 /* LotteriesDomain in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +111,22 @@
 				373CBC9C2C00C9F9005D24A2 /* Coordinator.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		377D5F082C0230FC00D47398 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				377D5F092C02313800D47398 /* CoordinatorTests.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		377D5F0B2C02317E00D47398 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				377D5F0C2C02318D00D47398 /* MockFileDataManager.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		37E2C3422BFF9F57005C7A88 = {
@@ -127,7 +148,6 @@
 			children = (
 				37E2C34B2BFF9F57005C7A88 /* Lottery.app */,
 				37E2C35B2BFF9F58005C7A88 /* LotteryTests.xctest */,
-				37E2C3652BFF9F58005C7A88 /* LotteryUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,8 +175,9 @@
 		37E2C35E2BFF9F58005C7A88 /* LotteryTests */ = {
 			isa = PBXGroup;
 			children = (
+				377D5F0B2C02317E00D47398 /* Mocks */,
+				377D5F082C0230FC00D47398 /* Navigation */,
 				377D5F072C022E5700D47398 /* Lottery.xctestplan */,
-				37E2C35F2BFF9F58005C7A88 /* LotteryTests.swift */,
 			);
 			path = LotteryTests;
 			sourceTree = "<group>";
@@ -202,6 +223,7 @@
 				37E2C3572BFF9F58005C7A88 /* Sources */,
 				37E2C3582BFF9F58005C7A88 /* Frameworks */,
 				37E2C3592BFF9F58005C7A88 /* Resources */,
+				377D5F102C0233F600D47398 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -209,27 +231,13 @@
 				37E2C35D2BFF9F58005C7A88 /* PBXTargetDependency */,
 			);
 			name = LotteryTests;
+			packageProductDependencies = (
+				377D5F0E2C0233F600D47398 /* LotteriesDomain */,
+				377D5F122C0233FE00D47398 /* JSONService */,
+			);
 			productName = LotteryTests;
 			productReference = 37E2C35B2BFF9F58005C7A88 /* LotteryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		37E2C3642BFF9F58005C7A88 /* LotteryUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 37E2C3752BFF9F58005C7A88 /* Build configuration list for PBXNativeTarget "LotteryUITests" */;
-			buildPhases = (
-				37E2C3612BFF9F58005C7A88 /* Sources */,
-				37E2C3622BFF9F58005C7A88 /* Frameworks */,
-				37E2C3632BFF9F58005C7A88 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				37E2C3672BFF9F58005C7A88 /* PBXTargetDependency */,
-			);
-			name = LotteryUITests;
-			productName = LotteryUITests;
-			productReference = 37E2C3652BFF9F58005C7A88 /* LotteryUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -245,10 +253,6 @@
 						CreatedOnToolsVersion = 15.2;
 					};
 					37E2C35A2BFF9F58005C7A88 = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 37E2C34A2BFF9F57005C7A88;
-					};
-					37E2C3642BFF9F58005C7A88 = {
 						CreatedOnToolsVersion = 15.2;
 						TestTargetID = 37E2C34A2BFF9F57005C7A88;
 					};
@@ -269,7 +273,6 @@
 			targets = (
 				37E2C34A2BFF9F57005C7A88 /* Lottery */,
 				37E2C35A2BFF9F58005C7A88 /* LotteryTests */,
-				37E2C3642BFF9F58005C7A88 /* LotteryUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -285,13 +288,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		37E2C3592BFF9F58005C7A88 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		37E2C3632BFF9F58005C7A88 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -316,14 +312,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37E2C3602BFF9F58005C7A88 /* LotteryTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		37E2C3612BFF9F58005C7A88 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				377D5F0A2C02313800D47398 /* CoordinatorTests.swift in Sources */,
+				377D5F0D2C02318D00D47398 /* MockFileDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,11 +324,6 @@
 			isa = PBXTargetDependency;
 			target = 37E2C34A2BFF9F57005C7A88 /* Lottery */;
 			targetProxy = 37E2C35C2BFF9F58005C7A88 /* PBXContainerItemProxy */;
-		};
-		37E2C3672BFF9F58005C7A88 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 37E2C34A2BFF9F57005C7A88 /* Lottery */;
-			targetProxy = 37E2C3662BFF9F58005C7A88 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -475,8 +460,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,9 +469,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mariia.Lottery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -503,8 +492,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -512,9 +501,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mariia.Lottery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -556,40 +549,6 @@
 			};
 			name = Release;
 		};
-		37E2C3762BFF9F58005C7A88 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mariia.LotteryUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Lottery;
-			};
-			name = Debug;
-		};
-		37E2C3772BFF9F58005C7A88 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mariia.LotteryUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Lottery;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -620,15 +579,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		37E2C3752BFF9F58005C7A88 /* Build configuration list for PBXNativeTarget "LotteryUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				37E2C3762BFF9F58005C7A88 /* Debug */,
-				37E2C3772BFF9F58005C7A88 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -647,6 +597,14 @@
 		373CBCA82C00F9E8005D24A2 /* DesignLibrary */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignLibrary;
+		};
+		377D5F0E2C0233F600D47398 /* LotteriesDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LotteriesDomain;
+		};
+		377D5F122C0233FE00D47398 /* JSONService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = JSONService;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
