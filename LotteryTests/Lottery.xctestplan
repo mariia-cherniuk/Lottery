@@ -51,6 +51,13 @@
         "identifier" : "NetworkManagementTests",
         "name" : "NetworkManagementTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Core",
+        "identifier" : "StorageTests",
+        "name" : "StorageTests"
+      }
     }
   ],
   "version" : 1
