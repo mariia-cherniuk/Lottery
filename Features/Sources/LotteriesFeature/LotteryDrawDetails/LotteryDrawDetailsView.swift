@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignLibrary
 
 public struct LotteryDrawDetailsView: View {
     
@@ -9,30 +10,41 @@ public struct LotteryDrawDetailsView: View {
     }
     
     public var body: some View {
-        content
-            .padding(.large)
-            .navigationTitle("Lottery Draw Details")
+        ScrollView {
+            content
+        }
+        .padding(.horizontal)
+        .navigationTitle("Lottery Draw Details")
     }
 }
 
 private extension LotteryDrawDetailsView {
     
     var content: some View {
-        VStack(alignment: .leading, spacing: .spacing.small) {
-            title
-            Spacer()
-            lotteryBallsView
+        VStack(spacing: .spacing.large) {
+            header
+            lotteryBalls
         }
-        .contentShape(Rectangle())
     }
     
-    var title: some View {
-        Text("Your numbers")
-            .font(.title2)
-            .bold()
+    var header: some View {
+        Text("Good luck with your lottery ticket 🤞")
+    }
+    
+    var lotteryBalls: some View {
+        VStack(alignment: .leading, spacing: .spacing.large) {
+            title(message: "Your numbers")
+            lotteryBallsView
+        }
     }
     
     var lotteryBallsView: some View {
-        LotteryBallsView(ballNumbers: viewModel.numbers)
+        LotteryBallsView(viewModels: viewModel.ballViewModels)
+    }
+    
+    func title(message: String) -> some View {
+        Text(message)
+            .font(.title2)
+            .bold()
     }
 }

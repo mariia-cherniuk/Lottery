@@ -3,10 +3,10 @@ import DesignLibrary
 
 struct LotteryBallsView: View {
     
-    private let ballNumbers: [String]
+    private let viewModels: [BallViewModel]
     
-    init(ballNumbers: [String]) {
-        self.ballNumbers = ballNumbers
+    init(viewModels: [BallViewModel]) {
+        self.viewModels = viewModels
     }
     
     private let columns: [GridItem] = [
@@ -24,18 +24,16 @@ struct LotteryBallsView: View {
 private extension LotteryBallsView {
     
     var content: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: .spacing.large) {
-        
-                ///ForEach requires each element to have a unique identifier to distinguish between different items.
-                ///When you use id: \.self, SwiftUI uses the element itself as the identifier.
-                ///To ensure each item has a unique identifier, I decided to wrap items in a structure that includes a unique identifier.
-                
-                ForEach(Array(ballNumbers.enumerated()), id: \.offset) { index, number in
-                    BallView(number: number)
-                }
+        LazyVGrid(columns: columns, spacing: .spacing.large) {
+            
+            ///ForEach requires each element to have a unique identifier to distinguish between different items.
+            ///When you use id: \.self, SwiftUI uses the element itself as the identifier.
+            ///To ensure each item has a unique identifier, I decided to wrap items in a structure that includes a unique identifier.
+            
+            ForEach(Array(viewModels.enumerated()), id: \.offset) { index, viewModel in
+                BallView(viewModel: viewModel)
             }
-            .padding(.large)
         }
+        .padding(.large)
     }
 }
