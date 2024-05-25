@@ -9,11 +9,14 @@ final class LotteryDrawsUseCase: LotteryDrawsUseCaseProtocol {
     
     private let path: String = "/mariia-cherniuk/Lottery/master/Resources/lotteries.json"
     private let dataLoader: DataLoading
+    private let lotteriesStorage: LotteriesStorable
     private let transformer: LotteryDrawsTransformer
     
     init(dataLoader: DataLoading,
+         lotteriesStorage: LotteriesStorable,
          transformer: LotteryDrawsTransformer = LotteryDrawsTransformer()) {
         self.dataLoader = dataLoader
+        self.lotteriesStorage = lotteriesStorage
         self.transformer = transformer
     }
     

@@ -1,7 +1,10 @@
 import Foundation
 import NetworkManagement
+import Storage
 
 public final class UseCaseFactory {
+    
+    private let store = LotteriesStore(storage: KeyValueStorage(defaults: UserDefaults.standard))
     
     private let dataLoader: DataLoading
     
@@ -10,6 +13,6 @@ public final class UseCaseFactory {
     }
     
     public func makeLotteryDrawsUseCase() -> LotteryDrawsUseCaseProtocol {
-        LotteryDrawsUseCase(dataLoader: dataLoader)
+        LotteryDrawsUseCase(dataLoader: dataLoader, lotteriesStorage: store)
     }
 }
