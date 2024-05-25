@@ -3,6 +3,7 @@ import XCTest
 
 final class JSONServiceTests: XCTestCase {
     
+    //TODO: Test objects or fixtures should be isolated within the Fixtures directory. However, currently, this object is being used only within this file, which is why I declared it here
     private struct MockData: Decodable {
         let id: Int
         let name: String
@@ -25,6 +26,7 @@ final class JSONServiceTests: XCTestCase {
         super.tearDown()
     }
     
+    // MARK: - Test success
     func testGivenValidDataExists_WhenCallFetch_ThenResultIsSuccessWithMockData() {
         let testJSON = "{\"id\": 1, \"name\": \"Test\"}"
         mockFileDataManager.stubData = Data(testJSON.utf8)
@@ -40,6 +42,7 @@ final class JSONServiceTests: XCTestCase {
         XCTAssertEqual(mockFileDataManager.capturedURL?.absoluteString, "fake.url")
     }
     
+    // MARK: - Test failure
     func testGivenInvalidData_WhenCallFetch_ThenResultIsFailureWithUnableToDecodeError() {
         mockFileDataManager.stubData = Data("Invalid JSON Data".utf8)
         

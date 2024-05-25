@@ -1,0 +1,191 @@
+import XCTest
+import Combine
+import LotteriesDomain
+
+@testable import LotteriesFeature
+
+@MainActor
+final class LotteryDrawsViewModelTests: XCTestCase {
+    
+    private let lottery = Lottery(id: "id", drawDate: "2023-05-15", number1: "2", number2: "16", number3: "23", number4: "44", number5: "47", number6: "52", bonusBall: "14", topPrize: 4000000000)
+   
+    private lazy var lotteriesResponse = LotteriesResponse(draws: [lottery])
+    
+    private var mockUseCase: MockLotteryDrawsUseCase!
+    private var viewModel: LotteryDrawsViewModel!
+    
+    private var cancellables: [AnyCancellable] = []
+    
+    override func setUp() {
+        super.setUp()
+        mockUseCase = MockLotteryDrawsUseCase()
+        viewModel = LotteryDrawsViewModel(useCase: mockUseCase)
+    }
+    
+    override func tearDown() {
+        cancellables = []
+        mockUseCase = nil
+        viewModel = nil
+        super.tearDown()
+    }
+    
+    func testInitialStateIsIdle() {
+        guard case .idle = viewModel.state else {
+            return XCTFail("State should be idle")
+        }
+    }
+    
+    // MARK: - Test success
+    func testWhenOnAppearIsCalled_ThenCallFetch() {
+        mockUseCase.stubResponse = {
+            self.lotteriesResponse
+        }
+        
+        let expectation = self.expectation(description: #function)
+        viewModel.onAppear()
+        
+        viewModel.$state.sink { state in
+            switch state {
+            case .loaded:
+                expectation.fulfill()
+            default:
+                break
+            }
+        }
+        .store(in: &cancellables)
+        
+        waitForExpectations(timeout: 0.1)
+        XCTAssertTrue(mockUseCase.fetchWasCalled)
+    }
+    
+    func testStatesForSuccessResponse() {
+        mockUseCase.stubResponse = {
+            self.lotteriesResponse
+        }
+        
+        var capturedStates: [LotteryDrawsViewModel.State] = []
+        
+        viewModel.$state.sink { state in
+            capturedStates.append(state)
+        }
+        .store(in: &cancellables)
+        
+        let expectation = self.expectation(description: #function)
+        viewModel.onAppear()
+        
+        viewModel.$state.onReceiveLoaded {
+            expectation.fulfill()
+        }
+        .store(in: &cancellables)
+        
+        waitForExpectations(timeout: 0.1)
+        
+        XCTAssertEqual(capturedStates.count, 3)
+        
+        guard case .idle = capturedStates.first else {
+            return XCTFail("State should be idle")
+        }
+        
+        guard case .loading = capturedStates[1] else {
+            return XCTFail("State should be loading")
+        }
+        
+        guard case .loaded(let lotteryDraws) = capturedStates.last else {
+            return XCTFail("State should be loaded")
+        }
+        
+        XCTAssertEqual(lotteryDraws.first?.date, lotteriesResponse.draws.first?.drawDate)
+    }
+    
+    func testGivenLotteriesResponse_WhenOnAppearIsCalled_ThenStateIsLoaded() {
+        mockUseCase.stubResponse = {
+            self.lotteriesResponse
+        }
+        
+        let expectation = self.expectation(description: #function)
+        viewModel.onAppear()
+        
+        viewModel.$state.onReceiveLoaded {
+            expectation.fulfill()
+        }
+        .store(in: &cancellables)
+        
+        waitForExpectations(timeout: 0.1)
+        
+        guard case .loaded(let response) = viewModel.state else {
+            return XCTFail("State should be loaded")
+        }
+        
+        XCTAssertEqual(response.count, 1)
+        XCTAssertEqual(response.first?.id, lotteriesResponse.draws.first?.id)
+        XCTAssertEqual(response.first?.date, lotteriesResponse.draws.first?.drawDate)
+    }
+    
+    // MARK: - Test failure
+    func testGivenUnableToReadFromURL_WhenOnAppearIsCalled_ThenStateIsErrorWithCorrectMessage() {
+        mockUseCase.stubResponse = {
+            throw DomainError.unableToReadFromURL
+        }
+        
+        performOnAppearAndAwaitForExpectations(function: #function)
+        
+        guard case .error(let errorModel) = viewModel.state else {
+            return XCTFail("State should be error")
+        }
+        
+        XCTAssertEqual(errorModel.title, "Oh no 😢")
+        XCTAssertEqual(errorModel.message, "Unable to fetch lotteries.")
+    }
+    
+    func testGivenRundomError_WhenOnAppearIsCalled_ThenStateIsErrorWithCorrectMessage() {
+        mockUseCase.stubResponse = {
+            throw MockError()
+        }
+        
+        performOnAppearAndAwaitForExpectations(function: #function)
+        
+        guard case .error(let errorModel) = viewModel.state else {
+            return XCTFail("State should be error")
+        }
+        
+        XCTAssertEqual(errorModel.title, "Oh no 😢")
+        XCTAssertEqual(errorModel.message, "Smth went wrong, please try again.")
+    }
+    
+    private func performOnAppearAndAwaitForExpectations(function: String) {
+        let expectation = self.expectation(description: function)
+        viewModel.onAppear()
+        
+        viewModel.$state.onReceiveError {
+            expectation.fulfill()
+        }
+        .store(in: &cancellables)
+        
+        waitForExpectations(timeout: 0.1)
+    }
+}
+
+private extension Publisher where Output == LotteryDrawsViewModel.State, Failure == Never {
+   
+    func onReceiveLoaded(_ f: @escaping () -> Void) -> Cancellable {
+        self.sink { state in
+            switch state {
+            case .loaded:
+                f()
+            default:
+                break
+            }
+        }
+    }
+    
+    func onReceiveError(_ f: @escaping () -> Void) -> Cancellable {
+        self.sink { state in
+            switch state {
+            case .error:
+                f()
+            default:
+                break
+            }
+        }
+    }
+}

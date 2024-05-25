@@ -21,6 +21,7 @@ final class LotteryDrawsUseCaseTests: XCTestCase {
         super.tearDown()
     }
     
+    // MARK: - Test success
     func testGivenURL_WhenCallFetch_ThenResultIsSuccess() {
         mockJSONService.stubResult = {
             LotteriesResponse.fixture()
@@ -46,6 +47,7 @@ final class LotteryDrawsUseCaseTests: XCTestCase {
         XCTAssertEqual(mockJSONService.capturedURL?.absoluteString, "fake.url")
     }
     
+    // MARK: - Test failure
     func testGivenNoULR_WhenCallFetch_ThenResultIsFailureWithResourceCouldNotBeFoundError() {
         useCase = LotteryDrawsUseCase(jsonService: mockJSONService, url: nil)
         

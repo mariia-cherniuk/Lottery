@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "E739CBDF-5E05-4BC6-9BCE-09DB963C3A08",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "LotteriesFeatureTests",
+        "name" : "LotteriesFeatureTests"
+      }
+    }
+  ],
+  "version" : 1
+}

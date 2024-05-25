@@ -23,9 +23,28 @@ public struct Lottery: Decodable {
     public let number5: String
     public let number6: String
     public let bonusBall: String
-    let topPrize: Int // TODO: Double check type and max value
+    public let topPrize: Int // TODO: Double check type and max value
+    
+    public init(id: String, drawDate: String, number1: String, number2: String, number3: String, number4: String, number5: String, number6: String, bonusBall: String, topPrize: Int) {
+        self.id = id
+        self.drawDate = drawDate
+        self.number1 = number1
+        self.number2 = number2
+        self.number3 = number3
+        self.number4 = number4
+        self.number5 = number5
+        self.number6 = number6
+        self.bonusBall = bonusBall
+        self.topPrize = topPrize
+    }
 }
 
 public struct LotteriesResponse: Decodable {
+    
     public let draws: [Lottery]
+    
+    public init(draws: [Lottery]) {
+        self.draws = draws
+    }
 }
+

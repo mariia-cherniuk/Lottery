@@ -1,0 +1,57 @@
+{
+  "configurations" : [
+    {
+      "id" : "E30D2506-224E-4C89-B0A1-7FAA2A282E38",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Lottery.xcodeproj",
+      "identifier" : "37E2C34A2BFF9F57005C7A88",
+      "name" : "Lottery"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Lottery.xcodeproj",
+        "identifier" : "37E2C35A2BFF9F58005C7A88",
+        "name" : "LotteryTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Core",
+        "identifier" : "JSONServiceTests",
+        "name" : "JSONServiceTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:DesignLibrary",
+        "identifier" : "DesignLibraryTests",
+        "name" : "DesignLibraryTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Domain",
+        "identifier" : "LotteriesDomainTests",
+        "name" : "LotteriesDomainTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Features",
+        "identifier" : "LotteriesFeatureTests",
+        "name" : "LotteriesFeatureTests"
+      }
+    }
+  ],
+  "version" : 1
+}

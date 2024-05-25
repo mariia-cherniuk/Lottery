@@ -59,6 +59,7 @@
 		373CBC9E2C00CA86005D24A2 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
 		373CBCA32C00D0BF005D24A2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		373CBCA72C00F9BA005D24A2 /* DesignLibrary */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DesignLibrary; sourceTree = "<group>"; };
+		377D5F072C022E5700D47398 /* Lottery.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Lottery.xctestplan; sourceTree = "<group>"; };
 		37E2C34B2BFF9F57005C7A88 /* Lottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E2C34E2BFF9F57005C7A88 /* LotteryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryApp.swift; sourceTree = "<group>"; };
 		37E2C3522BFF9F57005C7A88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -154,6 +155,7 @@
 		37E2C35E2BFF9F58005C7A88 /* LotteryTests */ = {
 			isa = PBXGroup;
 			children = (
+				377D5F072C022E5700D47398 /* Lottery.xctestplan */,
 				37E2C35F2BFF9F58005C7A88 /* LotteryTests.swift */,
 			);
 			path = LotteryTests;
