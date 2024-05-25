@@ -1,11 +1,11 @@
 import SwiftUI
-import JSONService
+import NetworkManagement
 import LotteriesDomain
 import LotteriesFeature
 
 final class AppCoordinator {
     
-    private let useCaseFactory = UseCaseFactory(fileManager: FileDataManager())
+    private let useCaseFactory = UseCaseFactory(environment: NetworkManagement.Environment(schema: "https", host: "raw.githubusercontent.com"))
     
     @MainActor
     func makeRootView() -> some View {

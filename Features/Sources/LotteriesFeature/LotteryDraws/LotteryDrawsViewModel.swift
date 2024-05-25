@@ -21,7 +21,10 @@ public final class LotteryDrawsViewModel: ObservableObject {
     
     func onAppear() {
         state = .loading
-        fetchLotteries()
+        
+        Task {
+            await fetchLotteries()
+        }
     }
     
     func onTap(_ lottery: Lottery) {
@@ -31,14 +34,13 @@ public final class LotteryDrawsViewModel: ObservableObject {
 
 private extension LotteryDrawsViewModel {
     
-    func fetchLotteries() {
+    func fetchLotteries() async {
         do {
-            let result = try useCase.fetch()
+            let result = try await useCase.fetch()
             state = .loaded(lotteryDraws(from: result.draws) )
-        } catch DomainError.unableToReadFromURL {
-            state = .error(errorViewModel(message: "Unable to fetch lotteries."))
+        } catch DomainError.notConnectedToInternet {
+            state = .error(errorViewModel(message: "No Internet connection. Please check your connection and try again."))
         } catch {
-            //TODO: Handle other errors according to the specific requirements of the app
             state = .error(errorViewModel(message: "Smth went wrong, please try again."))
         }
     }

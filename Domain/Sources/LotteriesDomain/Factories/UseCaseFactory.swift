@@ -1,14 +1,15 @@
-import JSONService
+import Foundation
+import NetworkManagement
 
 public final class UseCaseFactory {
     
-    private let fileManager: FileDataManaging
+    private let dataLoader: DataLoading
     
-    public init(fileManager: FileDataManaging) {
-        self.fileManager = fileManager
+    public init(environment: NetworkManagement.Environment) {
+        self.dataLoader = DataLoader(session: URLSession.shared, environment: environment)
     }
     
     public func makeLotteryDrawsUseCase() -> LotteryDrawsUseCaseProtocol {
-        LotteryDrawsUseCase(jsonService: JSONService(fileManager: fileManager))
+        LotteryDrawsUseCase(dataLoader: dataLoader)
     }
 }
