@@ -24,8 +24,8 @@ public final class LotteryDrawsViewModel: ObservableObject {
         fetchLotteries()
     }
     
-    func onTapLotteryDraw() {
-        coordinator.showDetails()
+    func onTap(_ lotteryDraw: LotteryDraw) {
+        coordinator.showDetails(lotteryDraw)
     }
 }
 

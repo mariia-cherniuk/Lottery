@@ -1,7 +1,7 @@
 import LotteriesDomain
 
-struct LotteryDraw {
-    
+public struct LotteryDraw: Hashable {
+
     var id: String {
         draw.id
     }
@@ -14,5 +14,14 @@ struct LotteryDraw {
     
     init(draw: Lottery) {
         self.draw = draw
+    }
+    
+    public static func == (lhs: LotteryDraw, rhs: LotteryDraw) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(date)
     }
 }

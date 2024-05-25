@@ -1,3 +1,5 @@
+
 public protocol LotteriesCoordinating {
-    func showDetails()
+    //TODO: Implement local storage, pass id - navigate by id
+    func showDetails(_ lotteryDraw: LotteryDraw)
 }

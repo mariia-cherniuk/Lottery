@@ -17,8 +17,8 @@ struct RootView: View {
             LotteryDrawsView(viewModel: viewModel)
                 .navigationDestination(for: Coordinator.Destination.self) { destination in
                     switch destination {
-                    case .detail:
-                        Text("details")
+                    case .detail(let lotteryDraw):
+                        LotteryDrawDetailsView(viewModel: lotteryDraw)
                     }
                 }
                 .navigationBarTitleDisplayMode(.inline)

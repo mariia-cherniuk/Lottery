@@ -41,7 +41,7 @@ private extension LotteryDrawsView {
                 ForEach(lotteryDraws, id: \.id) { lotteryDraw in
                     LotteryDrawView(viewModel: lotteryDraw)
                         .onTapGesture {
-                            viewModel.onTapLotteryDraw()
+                            viewModel.onTap(lotteryDraw)
                         }
                 }
             }

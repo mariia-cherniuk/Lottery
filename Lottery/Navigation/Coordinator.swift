@@ -5,7 +5,7 @@ import SwiftUI
 final class Coordinator: ObservableObject, LotteriesCoordinating {
     
     enum Destination: Hashable {
-        case detail
+        case detail(LotteryDraw)
     }
     
     @Published var destinations: [Destination] = []
@@ -15,7 +15,7 @@ final class Coordinator: ObservableObject, LotteriesCoordinating {
         self.useCaseFactory = useCaseFactory
     }
     
-    func showDetails() {
-        destinations.append(.detail)
+    func showDetails(_ lotteryDraw: LotteryDraw) {
+        destinations.append(.detail(lotteryDraw))
     }
 }
