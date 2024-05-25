@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignLibrary
 
 struct LotteryDrawView: View {
     
@@ -9,13 +10,10 @@ struct LotteryDrawView: View {
     }
     
     var body: some View {
-        HStack(spacing: .spacing.large) {
-            Text(viewModel.date)
-            Spacer()
-        }
-        .contentShape(Rectangle())
-        .padding(.large)
-        .overlay(overlay)
+        TitleDetailsView(title: "Draw date:", details: viewModel.date)
+            .contentShape(Rectangle())
+            .padding(.large)
+            .overlay(overlay)
     }
 }
 
