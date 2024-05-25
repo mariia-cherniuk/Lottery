@@ -19,5 +19,6 @@ public struct TitleDetailsView: View {
                 .font(.body)
         }
         .contentShape(Rectangle())
+        .accessibilityElement(children: .combine)
     }
 }
