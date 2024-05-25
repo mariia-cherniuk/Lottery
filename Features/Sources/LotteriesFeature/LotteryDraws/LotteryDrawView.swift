@@ -10,14 +10,30 @@ struct LotteryDrawView: View {
     }
     
     var body: some View {
-        TitleDetailsView(title: "Draw date:", details: viewModel.date)
-            .contentShape(Rectangle())
+        content
             .padding(.large)
             .overlay(overlay)
     }
 }
 
 private extension LotteryDrawView {
+    
+    var content: some View {
+        VStack(spacing: .spacing.large) {
+            dateView
+            if let topPrize = viewModel.topPrize {
+                topPrizeView(details: topPrize)
+            }
+        }
+    }
+    
+    var dateView: some View {
+        TitleDetailsView(title: "Draw date:", details: viewModel.date)
+    }
+    
+    func topPrizeView(details: String) -> some View {
+        TitleDetailsView(title: "Top prize:", details: details)
+    }
     
     var overlay: some View {
         RoundedRectangle(cornerRadius: 8)
