@@ -24,8 +24,8 @@ public final class LotteryDrawsViewModel: ObservableObject {
         fetchLotteries()
     }
     
-    func onTap(_ lotteryDraw: LotteryDraw) {
-        coordinator.showDetails(lotteryDraw)
+    func onTap(_ lottery: Lottery) {
+        coordinator.showDetails(lottery)
     }
 }
 
@@ -50,6 +50,6 @@ private extension LotteryDrawsViewModel {
     }
     
     func lotteryDraws(from lotteries: [Lottery]) -> [LotteryDraw] {
-        lotteries.map { LotteryDraw(draw: $0) }
+        lotteries.map { LotteryDraw(lottery: $0) }
     }
 }

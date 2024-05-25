@@ -1,27 +1,18 @@
 import LotteriesDomain
 
-public struct LotteryDraw: Hashable {
+struct LotteryDraw {
 
     var id: String {
-        draw.id
+        lottery.id
     }
     
     var date: String {
-        draw.drawDate
+        lottery.drawDate
     }
     
-    private let draw: Lottery
+    let lottery: Lottery
     
-    init(draw: Lottery) {
-        self.draw = draw
-    }
-    
-    public static func == (lhs: LotteryDraw, rhs: LotteryDraw) -> Bool {
-        lhs.id == rhs.id
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-        hasher.combine(date)
+    init(lottery: Lottery) {
+        self.lottery = lottery
     }
 }

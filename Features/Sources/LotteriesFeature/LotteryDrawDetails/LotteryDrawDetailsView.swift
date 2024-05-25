@@ -2,15 +2,15 @@ import SwiftUI
 
 public struct LotteryDrawDetailsView: View {
     
-    private let viewModel: LotteryDraw
+    private let viewModel: LotteryDrawDetailsViewModel
     
-    public init(viewModel: LotteryDraw) {
+    public init(viewModel: LotteryDrawDetailsViewModel) {
         self.viewModel = viewModel
     }
     
     public var body: some View {
         HStack(spacing: .spacing.large) {
-            Text(viewModel.date)
+            Text("Details")
             Spacer()
             Text("Details")
         }

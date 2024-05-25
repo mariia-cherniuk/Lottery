@@ -1,4 +1,4 @@
-public struct Lottery: Decodable {
+public struct Lottery: Decodable, Hashable {
     
     enum CodingKeys: String, CodingKey {
         ///Using dashes in variable names is generally discouraged as it does not align with Swift's naming conventions
