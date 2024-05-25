@@ -26,7 +26,8 @@ let package = Package(
         .target(
             name: "LotteriesDomain",
             dependencies: [
-                .product(name: "NetworkManagement", package: "Core")
+                .product(name: "NetworkManagement", package: "Core"),
+                .product(name: "Storage", package: "Core")
             ]
         ),
         .testTarget(
