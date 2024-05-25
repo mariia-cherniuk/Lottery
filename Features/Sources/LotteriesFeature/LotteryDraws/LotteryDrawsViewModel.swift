@@ -37,7 +37,12 @@ private extension LotteryDrawsViewModel {
     func fetchLotteries() async {
         do {
             let result = try await useCase.fetch()
-            state = .loaded(lotteryDraws(from: result.draws) )
+            
+            if result.draws.isEmpty {
+                state = .error(errorViewModel(message: "The content you requested is currently empty."))
+            } else {
+                state = .loaded(lotteryDraws(from: result.draws) )
+            }
         } catch DomainError.notConnectedToInternet {
             state = .error(errorViewModel(message: "No Internet connection. Please check your connection and try again."))
         } catch {
