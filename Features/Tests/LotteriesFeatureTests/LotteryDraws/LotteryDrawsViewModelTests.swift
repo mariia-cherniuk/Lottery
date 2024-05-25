@@ -123,9 +123,9 @@ final class LotteryDrawsViewModelTests: XCTestCase {
     }
     
     // MARK: - Test failure
-    func testGivenUnableToReadFromURL_WhenOnAppearIsCalled_ThenStateIsErrorWithCorrectMessage() {
+    func testGivenNotConnectedToInternetError_WhenOnAppearIsCalled_ThenStateIsErrorWithCorrectMessage() {
         mockUseCase.stubResponse = {
-            throw DomainError.unableToReadFromURL
+            throw DomainError.notConnectedToInternet
         }
         
         performOnAppearAndAwaitForExpectations(function: #function)
@@ -135,7 +135,7 @@ final class LotteryDrawsViewModelTests: XCTestCase {
         }
         
         XCTAssertEqual(errorModel.title, "Oh no 😢")
-        XCTAssertEqual(errorModel.message, "Unable to fetch lotteries.")
+        XCTAssertEqual(errorModel.message, "No Internet connection. Please check your connection and try again.")
     }
     
     func testGivenRundomError_WhenOnAppearIsCalled_ThenStateIsErrorWithCorrectMessage() {

@@ -1,10 +1,11 @@
 import XCTest
 import LotteriesDomain
+import NetworkManagement
 @testable import Lottery
 
 final class CoordinatorTests: XCTestCase {
     
-    private let useCaseFactory = UseCaseFactory(fileManager: MockFileDataManager())
+    private let useCaseFactory = UseCaseFactory(environment: NetworkManagement.Environment(schema: "https", host: "lottery.uat.test"))
     private var coordinator: Coordinator!
     
     override func setUp() {

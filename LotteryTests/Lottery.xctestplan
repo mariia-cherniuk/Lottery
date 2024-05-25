@@ -26,13 +26,6 @@
     },
     {
       "target" : {
-        "containerPath" : "container:Core",
-        "identifier" : "JSONServiceTests",
-        "name" : "JSONServiceTests"
-      }
-    },
-    {
-      "target" : {
         "containerPath" : "container:DesignLibrary",
         "identifier" : "DesignLibraryTests",
         "name" : "DesignLibraryTests"
