@@ -15,4 +15,8 @@ public final class UseCaseFactory {
     public func makeLotteryDrawsUseCase() -> LotteryDrawsUseCaseProtocol {
         LotteryDrawsUseCase(dataLoader: dataLoader, lotteriesStorage: store)
     }
+    
+    public func ticketGeneratorUseCase() -> TicketGeneratorUseCasePtotocol {
+        TicketGeneratorUseCase(generator: SystemRandomNumberGenerator())
+    }
 }

@@ -5,7 +5,7 @@ struct Ticket {
     
     var message: String {
         hasWon ?
-        "🙌 Congratulations! You have a winning ticket! " :
+        "🎉 Congratulations! You have a winning ticket!" :
         "☹️ Your ticket didn't win. Better luck next time!"
     }
     
