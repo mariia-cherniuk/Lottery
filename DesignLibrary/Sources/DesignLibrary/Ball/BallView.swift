@@ -10,10 +10,10 @@ public struct BallView: View {
     
     public var body: some View {
         Text(viewModel.number)
-            .font(.title3)
+            .font(.caption)
             .fontWeight(.bold)
             .foregroundColor(.white)
-            .frame(width: 50, height: 50)
+            .frame(width: 40, height: 40)
             .background(viewModel.colour)
             .clipShape(Circle())
             .overlay(

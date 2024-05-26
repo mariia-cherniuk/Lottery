@@ -3,14 +3,14 @@ import DesignLibrary
 
 public struct LotteryDrawDetailsView: View {
     
-    private let viewModel: LotteryDrawDetailsViewModel
+    @ObservedObject private var viewModel: LotteryDrawDetailsViewModel
     
     public init(viewModel: LotteryDrawDetailsViewModel) {
         self.viewModel = viewModel
     }
     
     public var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             content
         }
         .padding(.horizontal)
@@ -21,14 +21,15 @@ public struct LotteryDrawDetailsView: View {
 private extension LotteryDrawDetailsView {
     
     var content: some View {
-        VStack(spacing: .spacing.large) {
+        VStack(alignment: .leading, spacing: .spacing.large) {
             lotteryBalls
-            header
-            button
+            message
+            generateTicketAction
+            tickets
         }
     }
     
-    var header: some View {
+    var message: some View {
         Text("Good luck with your lottery ticket 🤞")
     }
     
@@ -49,9 +50,22 @@ private extension LotteryDrawDetailsView {
             .bold()
     }
     
-    var button: some View {
+    var generateTicketAction: some View {
         Button("Generate ticket") {
-            //TODO: Implement tap
+            viewModel.onGenerateTicket()
+        }
+    }
+    
+    @ViewBuilder
+    var tickets: some View {
+        if !$viewModel.tickets.isEmpty {
+            VStack(alignment: .leading, spacing: .spacing.large) {
+                title(message: "Your tickets")
+                
+                ForEach(viewModel.tickets, id: \.id) { ticket in
+                    TicketView(viewModel: ticket)
+                }
+            }
         }
     }
 }
