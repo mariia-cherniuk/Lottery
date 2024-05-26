@@ -2,9 +2,9 @@ import SwiftUI
 
 struct TicketView: View {
     
-    private let viewModel: Ticket
+    private let viewModel: TicketViewModel
     
-    public init(viewModel: Ticket) {
+    public init(viewModel: TicketViewModel) {
         self.viewModel = viewModel
     }
     

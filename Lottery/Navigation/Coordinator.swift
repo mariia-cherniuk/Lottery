@@ -20,7 +20,6 @@ final class Coordinator: ObservableObject, LotteriesCoordinating {
     }
     
     func makeLotteryDrawDetailsViewModel(_ lottery: Lottery) -> LotteryDrawDetailsViewModel {
-        let useCase = useCaseFactory.ticketGeneratorUseCase()
-        return LotteryDrawDetailsViewModel(lottery: lottery, useCase: useCase)
+        LotteryDrawDetailsViewModel(lottery: lottery, useCase: useCaseFactory.ticketGeneratorUseCase())
     }
 }
