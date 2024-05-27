@@ -10,6 +10,6 @@ final class DrawsScreenTests: XCTestCase {
         
         screen.assertScreenVisible()
             .tapFirstDraw()
-            .assertScreenVisible()
+            .assertTabbedScreenVisible()
     }
 }

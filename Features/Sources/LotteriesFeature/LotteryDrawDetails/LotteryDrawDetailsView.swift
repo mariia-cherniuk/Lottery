@@ -15,7 +15,6 @@ public struct LotteryDrawDetailsView: View {
         }
         .padding(.horizontal)
         .navigationTitle("Lottery Draw Details")
-        .accessibilityIdentifier(AccessibilityIdentifiers.DrawDetailsScreen.name)
     }
 }
 
