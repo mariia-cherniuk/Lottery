@@ -13,11 +13,11 @@ final class TicketViewModelTests: XCTestCase {
 
         XCTAssertEqual(viewModel.ballViewModels.count, 6)
         
-        XCTAssertEqual(viewModel.ballViewModels[0].number, 1)
-        XCTAssertEqual(viewModel.ballViewModels[0].colour, Color.gray)
+        XCTAssertEqual(viewModel.ballViewModels[0].number, 2)
+        XCTAssertEqual(viewModel.ballViewModels[0].colour, Color.green)
         
-        XCTAssertEqual(viewModel.ballViewModels[1].number, 2)
-        XCTAssertEqual(viewModel.ballViewModels[1].colour, Color.green)
+        XCTAssertEqual(viewModel.ballViewModels[1].number, 3)
+        XCTAssertEqual(viewModel.ballViewModels[1].colour, Color.gray)
         
         XCTAssertEqual(viewModel.ballViewModels[2].number, 5)
         XCTAssertEqual(viewModel.ballViewModels[2].colour, Color.gray)
@@ -34,7 +34,7 @@ final class TicketViewModelTests: XCTestCase {
     
     func testLosingTicket() {
         let lottery = Lottery.fixture()
-        let lotteryTicket = LotteryTicket.fixture(number2: 9)
+        let lotteryTicket = LotteryTicket.fixture(number1: 1, number2: 9)
         let viewModel = TicketViewModel(lotteryTicket: lotteryTicket, lottery: lottery)
        
         XCTAssertEqual(viewModel.message, "☹️ Your ticket didn't win. Better luck next time!")

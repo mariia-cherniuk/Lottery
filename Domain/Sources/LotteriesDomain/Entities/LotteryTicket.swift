@@ -1,6 +1,6 @@
 import Foundation
 
-public class LotteryTicket {
+public struct LotteryTicket: Equatable {
     
     public let numbers: [Int]
     
