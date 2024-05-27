@@ -9,7 +9,7 @@ public class LotteryTicket {
     }
     
     public func hasWon(for lottery: Lottery) -> Bool {
-        ///In this app, a ticket is considered a winner if it contain
+        ///In this app, a ticket is considered a winner if it contains at least one number that match the lottery result
         numbers.haveCommonElements(numberOfCummonElements: 1, array: lottery.numbersAndBonusBall)
     }
 }
