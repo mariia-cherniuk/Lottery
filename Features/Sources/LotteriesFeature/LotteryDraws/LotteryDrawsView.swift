@@ -15,7 +15,7 @@ public struct LotteryDrawsView: View {
                 viewModel.onAppear()
             }
             .navigationTitle("Lottery Draws")
-            .accessibilityIdentifier(AccessibilityIdentifiers.DrawsSceen.name)
+            .accessibilityIdentifier(AccessibilityIdentifiers.DrawsScreen.name)
     }
 }
 
@@ -45,7 +45,7 @@ private extension LotteryDrawsView {
                 ForEach(Array(lotteryDraws.enumerated()), id: \.element.id) { index, lotteryDraw in
                     LotteryDrawCellView(viewModel: lotteryDraw)
                         .accessibilityAddTraits(.isButton)
-                        .accessibilityIdentifier(AccessibilityIdentifiers.DrawsSceen.draw(at: index))
+                        .accessibilityIdentifier(AccessibilityIdentifiers.DrawsScreen.draw(at: index))
                         .onTapGesture {
                             viewModel.onTabbedTap()
                           //  viewModel.onTap(lotteryDraw.lottery)

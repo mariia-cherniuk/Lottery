@@ -11,6 +11,6 @@ final class DrawDetailsScreenTests: XCTestCase {
         screen.assertScreenVisible()
             .tapFirstDraw()
             .assertScreenVisible()
-            .tapGenerateTicketsButton()
+            .tapGenerateTicketsButtonTwice()
     }
 }

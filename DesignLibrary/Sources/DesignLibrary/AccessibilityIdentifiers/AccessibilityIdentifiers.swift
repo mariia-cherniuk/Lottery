@@ -1,5 +1,5 @@
 public enum AccessibilityIdentifiers {
-    public enum DrawsSceen {
+    public enum DrawsScreen {
         public static let name = "DrawsScreen"
     
         public static func draw(at index: Int) -> String {
@@ -7,8 +7,8 @@ public enum AccessibilityIdentifiers {
         }
     }
     
-    public enum DrawDetailsSceen {
+    public enum DrawDetailsScreen {
         public static let name = "DrawDetailsScreen"
-        public static let generateTickets = "Generate Tickets"
+        public static let generateTickets = "GenerateTickets"
     }
 }

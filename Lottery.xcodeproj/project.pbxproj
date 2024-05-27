@@ -96,6 +96,7 @@
 		370E18832C04FB36009BD610 /* DrawDetailsScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawDetailsScreenTests.swift; sourceTree = "<group>"; };
 		370E188B2C04FD90009BD610 /* DrawsSceen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawsSceen.swift; sourceTree = "<group>"; };
 		370E18912C05091B009BD610 /* DrawDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawDetailsScreen.swift; sourceTree = "<group>"; };
+		370E18932C051A76009BD610 /* LotteryUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LotteryUITests.xctestplan; sourceTree = "<group>"; };
 		373C5D072C00C10F0084DAA4 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		373CBC9A2C00C8A5005D24A2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		373CBC9C2C00C9F9005D24A2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -147,6 +148,7 @@
 		370E18802C04FB36009BD610 /* LotteryUITests */ = {
 			isa = PBXGroup;
 			children = (
+				370E18932C051A76009BD610 /* LotteryUITests.xctestplan */,
 				370E188A2C04FD81009BD610 /* Screens */,
 				370E18812C04FB36009BD610 /* DrawsScreenTests.swift */,
 				370E18832C04FB36009BD610 /* DrawDetailsScreenTests.swift */,

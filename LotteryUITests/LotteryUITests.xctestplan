@@ -1,0 +1,30 @@
+{
+  "configurations" : [
+    {
+      "id" : "FFFFD6AC-614B-496A-AFD4-532537CE29EE",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "environmentVariableEntries" : [
+      {
+        "key" : "UI_USER_INTERFACE_STYLE",
+        "value" : "Light"
+      }
+    ]
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Lottery.xcodeproj",
+        "identifier" : "370E187E2C04FB36009BD610",
+        "name" : "LotteryUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
