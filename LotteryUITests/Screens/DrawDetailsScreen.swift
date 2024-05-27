@@ -15,9 +15,20 @@ final class DrawDetailsScreen {
         return self
     }
     
-    func tapGenerateTicketsButtonTwice() {
+    func assertTicketDoesNotExist() -> Self {
+        let ticket = app.staticTexts[AccessibilityIdentifiers.DrawDetailsScreen.ticket(at: 0)]
+        XCTAssertFalse(ticket.exists, "The ticket should not exist")
+        return self
+    }
+    
+    func assertTicketExist() {
+        let ticket = app.staticTexts[AccessibilityIdentifiers.DrawDetailsScreen.ticket(at: 0)]
+        XCTAssertTrue(ticket.exists, "The ticket should exist")
+    }
+    
+    func tapGenerateTickets() -> Self {
         let generateTicketsButton = app.buttons[AccessibilityIdentifiers.DrawDetailsScreen.generateTickets]
         generateTicketsButton.tap()
-        generateTicketsButton.tap()
+        return self
     }
 }

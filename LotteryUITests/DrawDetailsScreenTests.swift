@@ -2,15 +2,17 @@ import XCTest
 
 final class DrawDetailsScreenTests: XCTestCase {
 
-    func testCanGenerateTickets() {
+    func testCanGenerateAndDisplayTickets() {
         let app = XCUIApplication()
         app.launch()
         
-        let screen = DrawsSceen(app: app)
+        let screen = DrawsScreen(app: app)
         
         screen.assertScreenVisible()
             .tapFirstDraw()
             .assertScreenVisible()
-            .tapGenerateTicketsButtonTwice()
+            .assertTicketDoesNotExist()
+            .tapGenerateTickets()
+            .assertTicketExist()
     }
 }

@@ -1,7 +1,7 @@
 import XCTest
 import DesignLibrary
 
-final class DrawsSceen {
+final class DrawsScreen {
     
     private let app: XCUIApplication
     
@@ -11,7 +11,6 @@ final class DrawsSceen {
     
     @discardableResult
     func assertScreenVisible() -> Self {
-        
         XCTAssertTrue(app.scrollViews[AccessibilityIdentifiers.DrawsScreen.name].waitForExistence(timeout: 5))
         return self
     }

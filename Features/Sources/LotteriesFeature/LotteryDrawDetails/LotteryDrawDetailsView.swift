@@ -64,8 +64,9 @@ private extension LotteryDrawDetailsView {
             VStack(alignment: .leading, spacing: .spacing.large) {
                 title(message: "Your tickets")
                 
-                ForEach(viewModel.tickets, id: \.id) { ticket in
+                ForEach(Array(viewModel.tickets.enumerated()), id: \.element.id) { index, ticket in
                     TicketView(viewModel: ticket)
+                        .accessibilityIdentifier(AccessibilityIdentifiers.DrawDetailsScreen.ticket(at: index))
                 }
             }
         }

@@ -6,7 +6,7 @@ final class DrawsScreenTests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        let screen = DrawsSceen(app: app)
+        let screen = DrawsScreen(app: app)
         
         screen.assertScreenVisible()
             .tapFirstDraw()
