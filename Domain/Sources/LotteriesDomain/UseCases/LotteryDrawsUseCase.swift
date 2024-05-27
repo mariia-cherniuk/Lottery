@@ -8,6 +8,12 @@ public protocol LotteryDrawsUseCaseProtocol {
 
 final class LotteryDrawsUseCase: LotteryDrawsUseCaseProtocol {
     
+    private let jsonDecoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(.drawDateFormatter)
+        return decoder
+    }()
+    
     private let path: String = "/mariia-cherniuk/Lottery/master/Resources/lotteries.json"
     private let dataLoader: DataLoading
     private let lotteriesStorage: LotteriesStorable
@@ -21,9 +27,7 @@ final class LotteryDrawsUseCase: LotteryDrawsUseCaseProtocol {
     func fetch() async throws -> [Lottery] {
         do {
             let data = try await dataLoader.fetch(resource: Resource(path: path, method: .GET))
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .formatted(.drawDateFormatter)
-            let response = try decoder.decode(LotteriesResponse.self, from: data)
+            let response = try jsonDecoder.decode(LotteriesResponse.self, from: data)
             let draws = response.draws
             try? lotteriesStorage.save(draws) //TODO: ADD logger
             return draws

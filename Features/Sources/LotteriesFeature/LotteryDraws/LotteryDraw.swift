@@ -4,8 +4,6 @@ import Formatters
 
 struct LotteryDraw {
 
-    private let dateFormat = "d MMMM yyyy"
-    
     var id: String {
         lottery.id
     }

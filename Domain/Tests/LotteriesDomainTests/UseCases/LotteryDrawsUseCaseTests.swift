@@ -1,8 +1,16 @@
 import XCTest
 import NetworkManagement
+import Formatters
+
 @testable import LotteriesDomain
 
 final class LotteryDrawsUseCaseTests: XCTestCase {
+    
+    private let jsonEncoder: JSONEncoder = {
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .formatted(.drawDateFormatter)
+        return encoder
+    }()
     
     private var useCase: LotteryDrawsUseCase!
     private var mockDataLoader: MockDataLoader!
@@ -25,8 +33,9 @@ final class LotteryDrawsUseCaseTests: XCTestCase {
     // MARK: - Test success
     func testGivenData_WhenCallFetch_ThenResultIsSuccess() async {
         let lotteries = [Lottery.fixture()]
+        let lotteriesResponse = LotteriesResponse(draws: lotteries)
         mockDataLoader.stubResponse = {
-            try! JSONEncoder().encode(lotteries)
+            try! self.jsonEncoder.encode(lotteriesResponse)
         }
 
         do {
@@ -39,7 +48,7 @@ final class LotteryDrawsUseCaseTests: XCTestCase {
             XCTAssertEqual(result.first?.number4, 44)
             XCTAssertEqual(result.first?.number5, 47)
             XCTAssertEqual(result.first?.number6, 52)
-//            XCTAssertEqual(result.first?.drawDate, "2023-05-15") TODO: Fix
+            XCTAssertEqual(result.first?.drawDate, Date.fixture())
             XCTAssertEqual(result.first?.bonusBall, 14)
             XCTAssertEqual(result.first?.topPrize, 4000000000)
         } catch {
@@ -51,24 +60,18 @@ final class LotteryDrawsUseCaseTests: XCTestCase {
     }
     
     // MARK: - Test failure
-    func testGivenNotConnectedToInternetError_WhenFetchIsCalled_ThenResponseIsFailureWithDomainNotConnectedToInternetError() async {
+    func testGivenNotConnectedToInternetError_WhenFetchIsCalled_ThenCallLotteriesStore() async {
         mockDataLoader.stubResponse = {
             throw NetworkError.notConnectedToInternet
         }
         
         do {
             let _ = try await useCase.fetch()
-            return XCTFail("Fetch should fail")
         } catch {
-            guard let capturedError = error as? DomainError else {
-                return XCTFail("Error should be DomainError")
-            }
-            
-            guard case .notConnectedToInternet = capturedError else {
-                return XCTFail("Error should be notConnectedToInternet")
-            }
+            return XCTFail("Result should be success")
         }
         
+        XCTAssertTrue(mockLotteriesStorage.fetchWasCalled)
         XCTAssertEqual(mockDataLoader.capturedResource?.path, "/mariia-cherniuk/Lottery/master/Resources/lotteries.json")
         XCTAssertEqual(mockDataLoader.capturedResource?.method.rawValue, "GET")
     }

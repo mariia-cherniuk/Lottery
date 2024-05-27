@@ -17,4 +17,9 @@ public struct StringToInt: Codable, Hashable {
             throw DecodingError.dataCorruptedError(in: container, debugDescription: "Expected an integer value but got a string: \(stringValue)")
         }
     }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(String(wrappedValue))
+    }
 }
