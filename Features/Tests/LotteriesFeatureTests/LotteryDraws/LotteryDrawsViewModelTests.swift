@@ -144,6 +144,22 @@ final class LotteryDrawsViewModelTests: XCTestCase {
         XCTAssertEqual(errorModel.message, "Smth went wrong, please try again.")
     }
     
+    // MARK: - Test empty state
+    func testNoLotteries_WhenOnAppearIsCalled_ThenStateIsError() {
+        mockUseCase.stubResponse = {
+            []
+        }
+        
+        performOnAppearAndAwaitForExpectations(function: #function)
+        
+        guard case .error(let errorModel) = viewModel.state else {
+            return XCTFail("State should be error")
+        }
+        
+        XCTAssertEqual(errorModel.title, "Oh no 😢")
+        XCTAssertEqual(errorModel.message, "The content you requested is currently empty.")
+    }
+    
     private func performOnAppearAndAwaitForExpectations(function: String) {
         let expectation = self.expectation(description: function)
         viewModel.onAppear()
