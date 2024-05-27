@@ -58,6 +58,13 @@
         "identifier" : "StorageTests",
         "name" : "StorageTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Core",
+        "identifier" : "FormattersTests",
+        "name" : "FormattersTests"
+      }
     }
   ],
   "version" : 1

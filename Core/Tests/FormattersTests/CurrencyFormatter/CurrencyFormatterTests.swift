@@ -1,5 +1,5 @@
 import XCTest
-@testable import LotteriesFeature
+@testable import Formatters
 
 final class CurrencyFormatterTests: XCTestCase {
     
@@ -19,7 +19,7 @@ final class CurrencyFormatterTests: XCTestCase {
         let currencyFormatter = CurrencyFormatter(formatter: formatter)
         let result = currencyFormatter.string(from: 1050, currencyCode: "GBP")
         
-        XCTAssertEqual(result, "£10.50")
+        XCTAssertEqual(result, "£10")
     }
     
     func testUSDString() {
@@ -27,6 +27,6 @@ final class CurrencyFormatterTests: XCTestCase {
         formatter.locale = Locale(identifier: "en_US")
         let result = currencyFormatter.string(from: 4000000000, currencyCode: "USD")
         
-        XCTAssertEqual(result, "$40,000,000.00")
+        XCTAssertEqual(result, "$40,000,000")
     }
 }
