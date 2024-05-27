@@ -12,6 +12,7 @@ When tap on draw -> navigate to LotteryDrawDetailsView.
 
 Details Screen - **LotteryDrawDetailsView**
 Contains:
+- TabView with lottery draws enables you to swipe between details.
 - Lottery results, represented as balls.
 - Good luck message.
 - Generate ticket button.
