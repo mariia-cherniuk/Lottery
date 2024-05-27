@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignLibrary
 
 struct TicketView: View {
     
@@ -13,6 +14,8 @@ struct TicketView: View {
             header
             lotteryBallsView
         }
+        .padding(.large)
+        .overlay(OverlayView())
     }
 }
 

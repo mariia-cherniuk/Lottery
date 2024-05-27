@@ -12,7 +12,7 @@ struct LotteryDrawView: View {
     var body: some View {
         content
             .padding(.large)
-            .overlay(overlay)
+            .overlay(OverlayView())
     }
 }
 
@@ -33,10 +33,5 @@ private extension LotteryDrawView {
     
     func topPrizeView(details: String) -> some View {
         TitleDetailsView(title: "Top prize:", details: details)
-    }
-    
-    var overlay: some View {
-        RoundedRectangle(cornerRadius: 8)
-            .stroke(Color.purple, lineWidth: 1)
     }
 }

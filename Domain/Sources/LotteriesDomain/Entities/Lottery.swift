@@ -1,3 +1,5 @@
+import ProppertyWrappers
+
 public struct Lottery: Codable, Hashable {
     
     enum CodingKeys: String, CodingKey {
@@ -16,16 +18,18 @@ public struct Lottery: Codable, Hashable {
     
     public let id: String
     public let drawDate: String
-    public let number1: String
-    public let number2: String
-    public let number3: String
-    public let number4: String
-    public let number5: String
-    public let number6: String
-    public let bonusBall: String
-    public let topPrize: Int // TODO: Double check type and max value
     
-    public init(id: String, drawDate: String, number1: String, number2: String, number3: String, number4: String, number5: String, number6: String, bonusBall: String, topPrize: Int) {
+    @StringToInt public var number1: Int
+    @StringToInt public var number2: Int
+    @StringToInt public var number3: Int
+    @StringToInt public var number4: Int
+    @StringToInt public var number5: Int
+    @StringToInt public var number6: Int
+    @StringToInt public var bonusBall: Int
+    
+    public let topPrize: Int
+    
+    public init(id: String, drawDate: String, number1: Int, number2: Int, number3: Int, number4: Int, number5: Int, number6: Int, bonusBall: Int, topPrize: Int) {
         self.id = id
         self.drawDate = drawDate
         self.number1 = number1
@@ -48,3 +52,8 @@ public struct LotteriesResponse: Codable {
     }
 }
 
+extension Lottery {
+    public var numbersAndBonusBall: [Int] {
+        [number1, number2, number3, number4, number5, number6, bonusBall]
+    }
+}

@@ -21,8 +21,7 @@ final class TicketGeneratorUseCase: TicketGeneratorUseCasePtotocol {
             .shuffled(using: &generator)
             .prefix(Constant.numbersAmount)
             .sorted()
-            .map { "\($0)" }
         
-        return LotteryTicket(numbers: numbers, resultNumbers: resultNumbers)
+        return LotteryTicket(numbers: numbers)
     }
 }
