@@ -4,11 +4,10 @@ I used Xcode (Version 15.2 (15C500b) and iOS 17.2 Simulator.
 ## 🌱ABOUT APP
 
 Home Screen - **LotteryDrawsView**
-Contains - [LotteryDrawCellView]
+Contains:
+- [LotteryDrawCellView]
 
-Fetch draws from [remote](https://raw.githubusercontent.com/mariia-cherniuk/Lottery/master/Resources/lotteries.json) 
-When .notConnectedToInternet -> fetch draws from local storage.
-When tap on draw -> navigate to LotteryDrawDetailsView.
+Fetch draws from the [remote server](https://raw.githubusercontent.com/mariia-cherniuk/Lottery/master/Resources/lotteries.json). If there is no internet connection, retrieve draws from local storage. Tapping on a draw navigates you to the LotteryDrawDetailsView.
 
 Details Screen - **LotteryDrawDetailsView**
 Contains:
@@ -29,7 +28,7 @@ The project architecture was influenced by the concepts presented in [this video
 
 What I like about this approach is that it establishes clear boundaries between various components of the application, such as the Core, Domain, UI, etc. This separation facilitates scaling the application with minimal impact on its other parts.
 
-DisneyProject
+DisneyProject:
 - Package: Core - application agnostic (Formatters, NetworkManagement, PropertyWrappers, Storage)
 - Package: Features (ViewModels and Views)
 - Package: Domain - UI-less business logic (Entities, EntitiesPersistence, UseCases)
