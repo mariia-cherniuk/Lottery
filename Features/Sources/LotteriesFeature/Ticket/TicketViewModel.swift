@@ -4,15 +4,15 @@ import SwiftUI
 
 final class TicketViewModel {
     
-    var message: String {
+    private(set) lazy var message: String = {
         lotteryTicket.hasWon(for: lottery) ?
         "🎉 Congratulations! You have a winning ticket!" :
         "☹️ Your ticket didn't win. Better luck next time!"
-    }
+    }()
     
-    var ballViewModels: [BallViewModel] {
+    private(set) lazy var ballViewModels: [BallViewModel] = {
         lotteryTicket.numbers.map(map(_:))
-    }
+    }()
     
     let id = UUID()
     private let lotteryTicket: LotteryTicket
@@ -28,7 +28,7 @@ private extension TicketViewModel {
    
     func map(_ number: Int) -> BallViewModel {
         let hasBallWon = lottery.numbersAndBonusBall.contains(where: { $0 == number })
-        let colour = hasBallWon ? Color.red : Color.gray
+        let colour = hasBallWon ? Color.green : Color.gray
         return BallViewModel(number: number, colour: colour)
     }
 }

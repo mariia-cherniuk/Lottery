@@ -14,8 +14,6 @@ struct TicketView: View {
             header
             lotteryBallsView
         }
-        .padding(.large)
-        .overlay(OverlayView())
     }
 }
 

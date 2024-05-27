@@ -5,19 +5,8 @@ import SwiftUI
 public final class LotteryDrawDetailsViewModel: ObservableObject {
     
     private struct Constant {
-        static let resultBallColour = Color.red
+        static let resultBallColour = Color.green
         static let bonusBallColour = Color.yellow
-    }
-    
-    private lazy var bonusBall = lottery.bonusBall
-    
-    private lazy var resultNumbers = [
-        lottery.number1, lottery.number2, lottery.number3,
-        lottery.number4, lottery.number5, lottery.number6
-    ]
-    
-    private var results: [Int] {
-        resultNumbers + [bonusBall]
     }
     
     lazy var ballViewModels: [BallViewModel] = {
@@ -42,8 +31,8 @@ public final class LotteryDrawDetailsViewModel: ObservableObject {
 private extension LotteryDrawDetailsViewModel {
     
     func generateResultBallViewModels() -> [BallViewModel] {
-        let bonusBallViewModel = BallViewModel(number: bonusBall, colour: Constant.bonusBallColour)
-        var ballViewModels: [BallViewModel] = resultNumbers.map { BallViewModel(number: $0, colour: Constant.resultBallColour) }
+        let bonusBallViewModel = BallViewModel(number: lottery.bonusBall, colour: Constant.bonusBallColour)
+        var ballViewModels: [BallViewModel] = lottery.numbers.map { BallViewModel(number: $0, colour: Constant.resultBallColour) }
         ballViewModels.append(bonusBallViewModel)
         return ballViewModels
     }

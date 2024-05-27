@@ -44,7 +44,12 @@ public struct Lottery: Codable, Hashable {
 }
 
 extension Lottery {
+    
     public var numbersAndBonusBall: [Int] {
         [number1, number2, number3, number4, number5, number6, bonusBall]
+    }
+    
+    public var numbers: [Int] {
+        [number1, number2, number3, number4, number5, number6]
     }
 }
