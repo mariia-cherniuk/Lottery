@@ -3,18 +3,18 @@ I used Xcode (Version 15.2 (15C500b) and iOS 17.2 Simulator.
 
 ## 🌱ABOUT APP
 
-Home Screen - LotteryDrawsView
+Home Screen - **LotteryDrawsView**
 Contains - [LotteryDrawCellView]
 
 Fetch draws from [remote](https://raw.githubusercontent.com/mariia-cherniuk/Lottery/master/Resources/lotteries.json) 
-When .notConnectedToInternet fetch draws from local storage
-When tap on draw -> navigate to LotteryDrawDetailsView
+When .notConnectedToInternet -> fetch draws from local storage.
+When tap on draw -> navigate to LotteryDrawDetailsView.
 
-Details Screen - LotteryDrawDetailsView
+Details Screen - **LotteryDrawDetailsView**
 Contains:
-- Lottery results, represented as balls
-- Good luck message
-- Generate ticket button
+- Lottery results, represented as balls.
+- Good luck message.
+- Generate ticket button.
 - [LotteryTicket]
 
 When you tap on Generate ticket, the most recently generated ticket will be displayed at the top of the Your tickets view.
