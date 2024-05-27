@@ -4,7 +4,7 @@ import XCTest
 final class LotteriesStoreTests: XCTestCase {
     
     private let storeKey = "lotteries-test-store"
-    private let character = Lottery.fixture()
+    private let lottery = Lottery.fixture()
     
     private var store: LotteriesStore!
     private var mockKeyValueStorage: MockKeyValueStorage!
@@ -28,22 +28,22 @@ final class LotteriesStoreTests: XCTestCase {
     
     func testSaveCharacter() throws {
         store = LotteriesStore(storage: FakeStore())
-        XCTAssertFalse(store.contains(character: character))
-        try store.save(character: character)
-        XCTAssertTrue(store.contains(character: character))
+        XCTAssertFalse(store.contains(lottery))
+        try store.save([lottery])
+        XCTAssertTrue(store.contains(lottery))
     }
     
     func testContainsCharacter() throws {
         store = LotteriesStore(storage: FakeStore())
-        try store.save(character: character)
-        XCTAssertTrue(store.contains(character: character))
+        try store.save([lottery])
+        XCTAssertTrue(store.contains(lottery))
     }
     
     func testItUsesKeyValueStorageToFetchAllCorrectly() throws {
         var didCallGetValue = false
         mockKeyValueStorage.stubGETValue = { _ in
             didCallGetValue = true
-            return [self.character]
+            return [self.lottery]
         }
         
         let _  = try store.fetchAll()
@@ -58,15 +58,8 @@ final class LotteriesStoreTests: XCTestCase {
             capturedKey = key
         }
         
-        var didCallGetValue = false
-        mockKeyValueStorage.stubGETValue = { _ in
-            didCallGetValue = true
-            return [self.character]
-        }
-        
-        try store.save(character: character)
+        try store.save([lottery])
         XCTAssertTrue(didCallStore)
-        XCTAssertTrue(didCallGetValue)
         XCTAssertEqual(capturedKey, storeKey)
     }
     
@@ -74,10 +67,10 @@ final class LotteriesStoreTests: XCTestCase {
         var didCallGetValue = false
         mockKeyValueStorage.stubGETValue = { _ in
             didCallGetValue = true
-            return [self.character]
+            return [self.lottery]
         }
         
-        let contains = store.contains(character: character)
+        let contains = store.contains(lottery)
         
         XCTAssertTrue(didCallGetValue)
         XCTAssertTrue(contains)

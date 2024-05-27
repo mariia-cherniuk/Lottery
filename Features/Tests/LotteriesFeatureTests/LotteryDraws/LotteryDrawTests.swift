@@ -5,7 +5,7 @@ import XCTest
 final class LotteryDrawTests: XCTestCase {
     
     func testLotteryDraw() {
-        let lotteryDraw = LotteryDraw(lottery: .fixture(id: "id-1", drawDate: "2024-05-15"))
+        let lotteryDraw = LotteryDraw(lottery: .fixture(id: "id-1", drawDate: Date())) //TODO: Fix date
         XCTAssertEqual(lotteryDraw.id, "id-1")
         XCTAssertEqual(lotteryDraw.date, "15 May 2024")
     }

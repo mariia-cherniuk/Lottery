@@ -4,7 +4,7 @@ public class LotteryTicket {
     
     public let numbers: [Int]
     
-    init(numbers: [Int]) {
+    public init(numbers: [Int]) {
         self.numbers = numbers
     }
     

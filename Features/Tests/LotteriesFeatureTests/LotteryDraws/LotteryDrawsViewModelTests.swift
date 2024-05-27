@@ -7,7 +7,7 @@ import LotteriesDomain
 @MainActor
 final class LotteryDrawsViewModelTests: XCTestCase {
    
-    private lazy var lotteriesResponse = LotteriesResponse(draws: [.fixture()])
+    private lazy var lotteries = [Lottery.fixture()]
     
     private var mockCoordinator: MockLotteriesCoordinator!
     private var mockUseCase: MockLotteryDrawsUseCase!
@@ -39,7 +39,7 @@ final class LotteryDrawsViewModelTests: XCTestCase {
     // MARK: - Test success
     func testWhenOnAppearIsCalled_ThenCallFetch() {
         mockUseCase.stubResponse = {
-            self.lotteriesResponse
+            self.lotteries
         }
         
         let expectation = self.expectation(description: #function)
@@ -61,7 +61,7 @@ final class LotteryDrawsViewModelTests: XCTestCase {
     
     func testStatesForSuccessResponse() {
         mockUseCase.stubResponse = {
-            self.lotteriesResponse
+            self.lotteries
         }
         
         var capturedStates: [LotteryDrawsViewModel.State] = []
@@ -98,9 +98,9 @@ final class LotteryDrawsViewModelTests: XCTestCase {
         XCTAssertEqual(lotteryDraws.first?.date, "15 May 2023")
     }
     
-    func testGivenLotteriesResponse_WhenOnAppearIsCalled_ThenStateIsLoaded() {
+    func testGivenLotteries_WhenOnAppearIsCalled_ThenStateIsLoaded() {
         mockUseCase.stubResponse = {
-            self.lotteriesResponse
+            self.lotteries
         }
         
         let expectation = self.expectation(description: #function)
@@ -118,7 +118,7 @@ final class LotteryDrawsViewModelTests: XCTestCase {
         }
         
         XCTAssertEqual(response.count, 1)
-        XCTAssertEqual(response.first?.id, lotteriesResponse.draws.first?.id)
+        XCTAssertEqual(response.first?.id, lotteries.first?.id)
         XCTAssertEqual(response.first?.date, "15 May 2023")
     }
     

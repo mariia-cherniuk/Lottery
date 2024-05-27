@@ -47,6 +47,9 @@ let package = Package(
             dependencies: ["NetworkManagement"]),
         .testTarget(
             name: "StorageTests",
-            dependencies: ["Storage"])
+            dependencies: ["Storage"]),
+        .testTarget(
+            name: "FormattersTests",
+            dependencies: ["Formatters"])
     ]
 )

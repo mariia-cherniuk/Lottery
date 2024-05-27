@@ -4,10 +4,10 @@ struct MockError: Error {}
 
 final class MockLotteryDrawsUseCase: LotteryDrawsUseCaseProtocol {
     
-    var stubResponse: (() throws -> LotteriesResponse)?
+    var stubResponse: (() throws -> [Lottery])?
     var fetchWasCalled = false
     
-    func fetch() throws -> LotteriesResponse {
+    func fetch() throws -> [Lottery] {
         fetchWasCalled = true
 
         guard let response = try stubResponse?() else {
