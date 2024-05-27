@@ -6,7 +6,7 @@ import DesignLibrary
 public final class LotteryDrawsViewModel: ObservableObject {
     
     enum State {
-        case idle, loading, loaded([LotteryDraw]), error(ErrorViewModel)
+        case idle, loading, loaded([LotteryDrawCellViewModel]), error(ErrorViewModel)
     }
     
     @Published var state: State = .idle
@@ -56,7 +56,7 @@ private extension LotteryDrawsViewModel {
         }
     }
     
-    func lotteryDraws(from lotteries: [Lottery]) -> [LotteryDraw] {
-        lotteries.map { LotteryDraw(lottery: $0) }
+    func lotteryDraws(from lotteries: [Lottery]) -> [LotteryDrawCellViewModel] {
+        lotteries.map { LotteryDrawCellViewModel(lottery: $0) }
     }
 }

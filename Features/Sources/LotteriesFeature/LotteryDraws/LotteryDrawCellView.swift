@@ -1,11 +1,11 @@
 import SwiftUI
 import DesignLibrary
 
-struct LotteryDrawView: View {
+struct LotteryDrawCellView: View {
     
-    private let viewModel: LotteryDraw
+    private let viewModel: LotteryDrawCellViewModel
     
-    init(viewModel: LotteryDraw) {
+    init(viewModel: LotteryDrawCellViewModel) {
         self.viewModel = viewModel
     }
     
@@ -16,7 +16,7 @@ struct LotteryDrawView: View {
     }
 }
 
-private extension LotteryDrawView {
+private extension LotteryDrawCellView {
     
     var content: some View {
         VStack(spacing: .spacing.large) {

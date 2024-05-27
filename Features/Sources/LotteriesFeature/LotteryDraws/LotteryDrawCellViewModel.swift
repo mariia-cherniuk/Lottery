@@ -2,7 +2,7 @@ import Foundation
 import LotteriesDomain
 import Formatters
 
-struct LotteryDraw {
+struct LotteryDrawCellViewModel {
 
     var id: String {
         lottery.id

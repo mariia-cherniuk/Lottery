@@ -38,11 +38,11 @@ private extension LotteryDrawsView {
         }
     }
     
-    func loaded(lotteryDraws: [LotteryDraw]) -> some View {
+    func loaded(lotteryDraws: [LotteryDrawCellViewModel]) -> some View {
         ScrollView(.vertical) {
             LazyVStack(spacing: .spacing.large) {
                 ForEach(lotteryDraws, id: \.id) { lotteryDraw in
-                    LotteryDrawView(viewModel: lotteryDraw)
+                    LotteryDrawCellView(viewModel: lotteryDraw)
                         .onTapGesture {
                             viewModel.onTap(lotteryDraw.lottery)
                         }
