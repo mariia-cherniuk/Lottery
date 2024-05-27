@@ -15,6 +15,7 @@ public struct LotteryDrawsView: View {
                 viewModel.onAppear()
             }
             .navigationTitle("Lottery Draws")
+            .accessibilityIdentifier(AccessibilityIdentifiers.DrawsSceen.name)
     }
 }
 
@@ -41,8 +42,10 @@ private extension LotteryDrawsView {
     func loaded(lotteryDraws: [LotteryDrawCellViewModel]) -> some View {
         ScrollView(.vertical) {
             LazyVStack(spacing: .spacing.large) {
-                ForEach(lotteryDraws, id: \.id) { lotteryDraw in
+                ForEach(Array(lotteryDraws.enumerated()), id: \.element.id) { index, lotteryDraw in
                     LotteryDrawCellView(viewModel: lotteryDraw)
+                        .accessibilityAddTraits(.isButton)
+                        .accessibilityIdentifier(AccessibilityIdentifiers.DrawsSceen.draw(at: index))
                         .onTapGesture {
                             viewModel.onTabbedTap()
                           //  viewModel.onTap(lotteryDraw.lottery)

@@ -13,6 +13,7 @@ struct LotteryDrawCellView: View {
         content
             .padding(.large)
             .overlay(OverlayView())
+            .accessibilityElement(children: .combine)
     }
 }
 

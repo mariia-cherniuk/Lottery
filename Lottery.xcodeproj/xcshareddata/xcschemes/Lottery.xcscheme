@@ -50,7 +50,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "37E2C3642BFF9F58005C7A88"
+               BlueprintIdentifier = "370E187E2C04FB36009BD610"
                BuildableName = "LotteryUITests.xctest"
                BlueprintName = "LotteryUITests"
                ReferencedContainer = "container:Lottery.xcodeproj">

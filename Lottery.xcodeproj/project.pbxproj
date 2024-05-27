@@ -11,8 +11,12 @@
 		370E18752C04E8D1009BD610 /* LotteriesDomain in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 370E18732C04E8D0009BD610 /* LotteriesDomain */; };
 		370E18772C04E8DD009BD610 /* CoreFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 370E18762C04E8DD009BD610 /* CoreFramework */; };
 		370E18782C04E8DD009BD610 /* CoreFramework in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 370E18762C04E8DD009BD610 /* CoreFramework */; };
-		370E18822C04FB36009BD610 /* LotteryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E18812C04FB36009BD610 /* LotteryUITests.swift */; };
-		370E18842C04FB36009BD610 /* LotteryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E18832C04FB36009BD610 /* LotteryUITestsLaunchTests.swift */; };
+		370E18822C04FB36009BD610 /* DrawsScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E18812C04FB36009BD610 /* DrawsScreenTests.swift */; };
+		370E18842C04FB36009BD610 /* DrawDetailsScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E18832C04FB36009BD610 /* DrawDetailsScreenTests.swift */; };
+		370E188C2C04FD90009BD610 /* DrawsSceen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E188B2C04FD90009BD610 /* DrawsSceen.swift */; };
+		370E188E2C050310009BD610 /* DesignLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 370E188D2C050310009BD610 /* DesignLibrary */; };
+		370E188F2C050310009BD610 /* DesignLibrary in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 370E188D2C050310009BD610 /* DesignLibrary */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		370E18922C05091B009BD610 /* DrawDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370E18912C05091B009BD610 /* DrawDetailsScreen.swift */; };
 		373CBC9B2C00C8A5005D24A2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373CBC9A2C00C8A5005D24A2 /* AppCoordinator.swift */; };
 		373CBC9D2C00C9F9005D24A2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373CBC9C2C00C9F9005D24A2 /* Coordinator.swift */; };
 		373CBCA02C00CB5E005D24A2 /* LotteriesFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 373CBC9F2C00CB5E005D24A2 /* LotteriesFeature */; };
@@ -47,6 +51,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		370E18902C050310009BD610 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				370E188F2C050310009BD610 /* DesignLibrary in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		373CBCA22C00CB5E005D24A2 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -77,8 +92,10 @@
 /* Begin PBXFileReference section */
 		370E187A2C04EC27009BD610 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		370E187F2C04FB36009BD610 /* LotteryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LotteryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		370E18812C04FB36009BD610 /* LotteryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryUITests.swift; sourceTree = "<group>"; };
-		370E18832C04FB36009BD610 /* LotteryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		370E18812C04FB36009BD610 /* DrawsScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawsScreenTests.swift; sourceTree = "<group>"; };
+		370E18832C04FB36009BD610 /* DrawDetailsScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawDetailsScreenTests.swift; sourceTree = "<group>"; };
+		370E188B2C04FD90009BD610 /* DrawsSceen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawsSceen.swift; sourceTree = "<group>"; };
+		370E18912C05091B009BD610 /* DrawDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawDetailsScreen.swift; sourceTree = "<group>"; };
 		373C5D072C00C10F0084DAA4 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		373CBC9A2C00C8A5005D24A2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		373CBC9C2C00C9F9005D24A2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -101,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				370E188E2C050310009BD610 /* DesignLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,10 +147,20 @@
 		370E18802C04FB36009BD610 /* LotteryUITests */ = {
 			isa = PBXGroup;
 			children = (
-				370E18812C04FB36009BD610 /* LotteryUITests.swift */,
-				370E18832C04FB36009BD610 /* LotteryUITestsLaunchTests.swift */,
+				370E188A2C04FD81009BD610 /* Screens */,
+				370E18812C04FB36009BD610 /* DrawsScreenTests.swift */,
+				370E18832C04FB36009BD610 /* DrawDetailsScreenTests.swift */,
 			);
 			path = LotteryUITests;
+			sourceTree = "<group>";
+		};
+		370E188A2C04FD81009BD610 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				370E188B2C04FD90009BD610 /* DrawsSceen.swift */,
+				370E18912C05091B009BD610 /* DrawDetailsScreen.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		373CBC992C00C897005D24A2 /* Navigation */ = {
@@ -233,6 +261,7 @@
 				370E187B2C04FB36009BD610 /* Sources */,
 				370E187C2C04FB36009BD610 /* Frameworks */,
 				370E187D2C04FB36009BD610 /* Resources */,
+				370E18902C050310009BD610 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,6 +269,9 @@
 				370E18862C04FB36009BD610 /* PBXTargetDependency */,
 			);
 			name = LotteryUITests;
+			packageProductDependencies = (
+				370E188D2C050310009BD610 /* DesignLibrary */,
+			);
 			productName = LotteryUITests;
 			productReference = 370E187F2C04FB36009BD610 /* LotteryUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -364,8 +396,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				370E18842C04FB36009BD610 /* LotteryUITestsLaunchTests.swift in Sources */,
-				370E18822C04FB36009BD610 /* LotteryUITests.swift in Sources */,
+				370E18842C04FB36009BD610 /* DrawDetailsScreenTests.swift in Sources */,
+				370E188C2C04FD90009BD610 /* DrawsSceen.swift in Sources */,
+				370E18922C05091B009BD610 /* DrawDetailsScreen.swift in Sources */,
+				370E18822C04FB36009BD610 /* DrawsScreenTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,6 +757,10 @@
 		370E18762C04E8DD009BD610 /* CoreFramework */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CoreFramework;
+		};
+		370E188D2C050310009BD610 /* DesignLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignLibrary;
 		};
 		373CBC9F2C00CB5E005D24A2 /* LotteriesFeature */ = {
 			isa = XCSwiftPackageProductDependency;

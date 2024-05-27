@@ -15,6 +15,7 @@ public struct LotteryDrawDetailsView: View {
         }
         .padding(.horizontal)
         .navigationTitle("Lottery Draw Details")
+        .accessibilityIdentifier(AccessibilityIdentifiers.DrawDetailsSceen.name)
     }
 }
 
@@ -54,6 +55,7 @@ private extension LotteryDrawDetailsView {
         Button("Generate ticket") {
             viewModel.onGenerateTicket()
         }
+        .accessibilityIdentifier(AccessibilityIdentifiers.DrawDetailsSceen.generateTickets)
     }
     
     @ViewBuilder
