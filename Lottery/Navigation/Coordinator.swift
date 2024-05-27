@@ -24,6 +24,17 @@ final class Coordinator: ObservableObject, LotteriesCoordinating {
         destinations.append(.tabbedDetail(lotteries))
     }
     
+    func lotteryDrawDetailsView(for lottery: Lottery) -> some View {
+        LotteryDrawDetailsView(viewModel: makeLotteryDrawDetailsViewModel(lottery))
+    }
+    
+    func tabDrawDetailsView(for lotteries: [Lottery]) -> some View {
+        TabDrawDetailsView(viewModels: lotteries.map { makeLotteryDrawDetailsViewModel($0) })
+    }
+}
+
+private extension Coordinator {
+    
     func makeLotteryDrawDetailsViewModel(_ lottery: Lottery) -> LotteryDrawDetailsViewModel {
         let useCase = useCaseFactory.ticketGeneratorUseCase()
         return LotteryDrawDetailsViewModel(lottery: lottery, useCase: useCase)

@@ -18,9 +18,9 @@ struct RootView: View {
                 .navigationDestination(for: Coordinator.Destination.self) { destination in
                     switch destination {
                     case .detail(let lottery):
-                        LotteryDrawDetailsView(viewModel: coordinator.makeLotteryDrawDetailsViewModel(lottery))
+                        coordinator.lotteryDrawDetailsView(for: lottery)
                     case .tabbedDetail(let lotteries):
-                        TabDetailsView(viewModels: lotteries.map { coordinator.makeLotteryDrawDetailsViewModel($0) })
+                        coordinator.tabDrawDetailsView(for: lotteries)
                     }
                 }
                 .navigationBarTitleDisplayMode(.inline)

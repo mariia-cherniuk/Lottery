@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct TabDetailsView: View {
+public struct TabDrawDetailsView: View {
     
     private let viewModels: [LotteryDrawDetailsViewModel]
     
