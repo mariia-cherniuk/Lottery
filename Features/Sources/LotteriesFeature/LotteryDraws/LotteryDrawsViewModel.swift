@@ -43,8 +43,6 @@ private extension LotteryDrawsViewModel {
             } else {
                 state = .loaded(lotteryDraws(from: draws))
             }
-        } catch DomainError.notConnectedToInternet {
-            state = .error(errorViewModel(message: "No Internet connection. Please check your connection and try again."))
         } catch {
             state = .error(errorViewModel(message: "Smth went wrong, please try again."))
         }

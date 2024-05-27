@@ -36,6 +36,12 @@ final class LotteryDrawsViewModelTests: XCTestCase {
         }
     }
     
+    // MARK: - Test onTap
+    func testWhenOnTapIsCalled_ThenCallCoordinator() {
+        viewModel.onTap(.fixture(id: "lottery-id"))
+        XCTAssertEqual(mockCoordinator.capturedLottery?.id, "lottery-id")
+    }
+    
     // MARK: - Test success
     func testWhenOnAppearIsCalled_ThenCallFetch() {
         mockUseCase.stubResponse = {
@@ -123,21 +129,6 @@ final class LotteryDrawsViewModelTests: XCTestCase {
     }
     
     // MARK: - Test failure
-    func testGivenNotConnectedToInternetError_WhenOnAppearIsCalled_ThenStateIsErrorWithCorrectMessage() {
-        mockUseCase.stubResponse = {
-            throw DomainError.notConnectedToInternet
-        }
-        
-        performOnAppearAndAwaitForExpectations(function: #function)
-        
-        guard case .error(let errorModel) = viewModel.state else {
-            return XCTFail("State should be error")
-        }
-        
-        XCTAssertEqual(errorModel.title, "Oh no 😢")
-        XCTAssertEqual(errorModel.message, "No Internet connection. Please check your connection and try again.")
-    }
-    
     func testGivenRundomError_WhenOnAppearIsCalled_ThenStateIsErrorWithCorrectMessage() {
         mockUseCase.stubResponse = {
             throw MockError()
