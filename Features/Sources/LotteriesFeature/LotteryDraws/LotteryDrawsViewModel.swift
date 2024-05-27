@@ -9,7 +9,7 @@ public final class LotteryDrawsViewModel: ObservableObject {
         case idle, loading, loaded([LotteryDrawCellViewModel]), error(ErrorViewModel)
     }
     
-    @Published var state: State = .idle
+    @Published private(set) var state: State = .idle
     
     private let useCase: LotteryDrawsUseCaseProtocol
     private let coordinator: LotteriesCoordinating

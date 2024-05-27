@@ -42,13 +42,28 @@ final class LotteryDrawsViewModelTests: XCTestCase {
         XCTAssertEqual(mockCoordinator.capturedLottery?.id, "lottery-id")
     }
     
+    // MARK: - Test onTabbedTap
+    func testWhenOnTabbedTapIsCalled_ThenCallCoordinator() {
+        performSuccess(description: #function)
+        viewModel.onTabbedTap()
+        
+        XCTAssertEqual(mockCoordinator.capturedLotteries?.count, 1)
+        XCTAssertEqual(mockCoordinator.capturedLotteries?.first?.id, "id")
+    }
+    
     // MARK: - Test success
     func testWhenOnAppearIsCalled_ThenCallFetch() {
+        performSuccess(description: #function)
+        
+        XCTAssertTrue(mockUseCase.fetchWasCalled)
+    }
+    
+    func performSuccess(description: String) {
         mockUseCase.stubResponse = {
             self.lotteries
         }
         
-        let expectation = self.expectation(description: #function)
+        let expectation = self.expectation(description: description)
         viewModel.onAppear()
         
         viewModel.$state.sink { state in
@@ -62,7 +77,6 @@ final class LotteryDrawsViewModelTests: XCTestCase {
         .store(in: &cancellables)
         
         waitForExpectations(timeout: 0.1)
-        XCTAssertTrue(mockUseCase.fetchWasCalled)
     }
     
     func testStatesForSuccessResponse() {

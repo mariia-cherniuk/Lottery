@@ -8,4 +8,9 @@ final class MockLotteriesCoordinator: LotteriesCoordinating {
     func showDetails(_ lottery: Lottery) {
         capturedLottery = lottery
     }
+    
+    var capturedLotteries: [Lottery]?
+    func showTabbedDetails(_ lottery: [Lottery]) {
+        capturedLotteries = lottery
+    }
 }
