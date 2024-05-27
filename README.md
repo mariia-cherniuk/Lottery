@@ -9,7 +9,7 @@ Contains:
 
 Fetch draws from the [remote server](https://raw.githubusercontent.com/mariia-cherniuk/Lottery/master/Resources/lotteries.json). If there is no internet connection, retrieve draws from local storage. Tapping on a draw navigates you to the LotteryDrawDetailsView.
 
-Details Screen - **LotteryDrawDetailsView**
+Details Screen - **TabDrawDetailsView**
 Contains:
 - TabView with lottery draws enables you to swipe between details.
 - Lottery results, represented as balls.
