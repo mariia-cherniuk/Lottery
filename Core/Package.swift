@@ -26,6 +26,10 @@ let package = Package(
             name: "Formatters",
             type: .dynamic,
             targets: ["Formatters"]),
+        .library(
+            name: "Logger",
+            type: .dynamic,
+            targets: ["Logger"])
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -41,6 +45,9 @@ let package = Package(
             dependencies: []),
         .target(
             name: "Formatters",
+            dependencies: []),
+        .target(
+            name: "Logger",
             dependencies: []),
         .testTarget(
             name: "NetworkManagementTests",

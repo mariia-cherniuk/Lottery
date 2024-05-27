@@ -11,6 +11,8 @@
 		370E18692C04A4E9009BD610 /* Formatters in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 370E18672C04A4E9009BD610 /* Formatters */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		370E186B2C04A4ED009BD610 /* ProppertyWrappers in Frameworks */ = {isa = PBXBuildFile; productRef = 370E186A2C04A4ED009BD610 /* ProppertyWrappers */; };
 		370E186C2C04A4ED009BD610 /* ProppertyWrappers in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 370E186A2C04A4ED009BD610 /* ProppertyWrappers */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		370E186E2C04E0AC009BD610 /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 370E186D2C04E0AC009BD610 /* Logger */; };
+		370E186F2C04E0AC009BD610 /* Logger in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 370E186D2C04E0AC009BD610 /* Logger */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		373C5D0B2C00C4100084DAA4 /* LotteriesDomain in Frameworks */ = {isa = PBXBuildFile; productRef = 373C5D0A2C00C4100084DAA4 /* LotteriesDomain */; };
 		373CBC9B2C00C8A5005D24A2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373CBC9A2C00C8A5005D24A2 /* AppCoordinator.swift */; };
 		373CBC9D2C00C9F9005D24A2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373CBC9C2C00C9F9005D24A2 /* Coordinator.swift */; };
@@ -47,6 +49,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				370E186F2C04E0AC009BD610 /* Logger in Embed Frameworks */,
 				370E18692C04A4E9009BD610 /* Formatters in Embed Frameworks */,
 				377D5F1A2C02811A00D47398 /* NetworkManagement in Embed Frameworks */,
 				370E186C2C04A4ED009BD610 /* ProppertyWrappers in Embed Frameworks */,
@@ -92,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				370E186E2C04E0AC009BD610 /* Logger in Frameworks */,
 				377D5F192C02811A00D47398 /* NetworkManagement in Frameworks */,
 				370E186B2C04A4ED009BD610 /* ProppertyWrappers in Frameworks */,
 				370E18682C04A4E9009BD610 /* Formatters in Frameworks */,
@@ -220,6 +224,7 @@
 				377D5F182C02811A00D47398 /* NetworkManagement */,
 				370E18672C04A4E9009BD610 /* Formatters */,
 				370E186A2C04A4ED009BD610 /* ProppertyWrappers */,
+				370E186D2C04E0AC009BD610 /* Logger */,
 			);
 			productName = Lottery;
 			productReference = 37E2C34B2BFF9F57005C7A88 /* Lottery.app */;
@@ -598,6 +603,10 @@
 		370E186A2C04A4ED009BD610 /* ProppertyWrappers */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ProppertyWrappers;
+		};
+		370E186D2C04E0AC009BD610 /* Logger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Logger;
 		};
 		373C5D0A2C00C4100084DAA4 /* LotteriesDomain */ = {
 			isa = XCSwiftPackageProductDependency;
