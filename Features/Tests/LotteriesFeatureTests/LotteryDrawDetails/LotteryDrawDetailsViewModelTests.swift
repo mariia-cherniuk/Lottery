@@ -1,11 +1,28 @@
 import XCTest
 import SwiftUI
+import Combine
 
 @testable import LotteriesFeature
 
 final class LotteryDrawDetailsViewModelTests: XCTestCase {
- 
-    private let viewModel = LotteryDrawDetailsViewModel(lottery: .fixture(), useCase: MockTicketGeneratorUseCase())
+    
+    private var mockUseCase: MockTicketGeneratorUseCase!
+    private var viewModel: LotteryDrawDetailsViewModel!
+    
+    private var cancellables: [AnyCancellable] = []
+    
+    override func setUp() {
+        super.setUp()
+        mockUseCase = MockTicketGeneratorUseCase()
+        viewModel = LotteryDrawDetailsViewModel(lottery: .fixture(), useCase: mockUseCase)
+    }
+    
+    override func tearDown() {
+        cancellables = []
+        mockUseCase = nil
+        viewModel = nil
+        super.tearDown()
+    }
     
     func testBallViewModels() {
         XCTAssertEqual(viewModel.ballViewModels.count, 7)
@@ -30,5 +47,25 @@ final class LotteryDrawDetailsViewModelTests: XCTestCase {
         
         XCTAssertEqual(viewModel.ballViewModels[6].number, 14)
         XCTAssertEqual(viewModel.ballViewModels[6].colour, Color.yellow)
+    }
+    
+    func testWhenOnGenerateTicket_ThenCallGenerateTicket() {
+        viewModel.onGenerateTicket()
+        XCTAssertTrue(mockUseCase.generateTicketWasCalled)
+    }
+    
+    func testWhenOnGenerateTicket_ThenPublishValue() {
+        mockUseCase.stubLotteryTicket = .fixture()
+        
+        var capturedTickets = [TicketViewModel]()
+        viewModel.$tickets
+            .sink { tickets in
+                capturedTickets = tickets
+            }
+            .store(in: &cancellables)
+        
+        viewModel.onGenerateTicket()
+        
+        XCTAssertEqual(capturedTickets.count, 1)
     }
 }
