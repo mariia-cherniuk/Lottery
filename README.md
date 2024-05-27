@@ -17,9 +17,9 @@ Contains:
 - Generate ticket button.
 - [LotteryTicket]
 
-When you tap on "Generate ticket", the most recently generated ticket will be displayed at the top of the "Your tickets" view.
-In this app, a ticket is considered a winner if it contains at least one number that match the lottery result. 
-Generated tickets are not saved to the local storage! So, when you navigate back to the screen, previously generated tickets will disappear.
+When you tap on "Generate ticket", the most recently generated ticket will be displayed at the top of the "Your tickets" view.<br>
+In this app, a ticket is considered a winner if it contains at least one number that match the lottery result.<br>
+Generated tickets are not saved to the local storage! So, when you navigate back to the screen, previously generated tickets will disappear.<br>
 Given more time, I would focus more on accessibility to ensure the app is available to all users.
 
 ## 🌱ARCHITECTURE CHOICE
@@ -35,8 +35,8 @@ DisneyProject
 - Package: DesignLibrary - Reusable views/theming/design tokens
 
 ## 🌱 NAVIGATION CHOISE
-I chose to implement the latest NavigationStack for handling navigation. Navigation is abstracted through the Coordinator pattern, which uses SwiftUI's NavigationStack behaviour under the hood - an array of destinations for its concrete implementation.
-Since the UI features interact only with the coordinator abstraction, it also simplifies modifying navigation behaviour without affecting the business logic in the view model.
+I chose to implement the latest NavigationStack for handling navigation. Navigation is abstracted through the Coordinator pattern, which uses SwiftUI's NavigationStack behaviour under the hood - an array of destinations for its concrete implementation.<br>
+Since the UI features interact only with the coordinator abstraction, it also simplifies modifying navigation behaviour without affecting the business logic in the view model.<br>
 Navigation is handled by the application, while features use the coordinator to delegate actions (the view model delegates actions through the coordinator).
 
 ## 🌱 STORAGE CHOICE
@@ -52,9 +52,9 @@ For more extensive data storage, more sensitive information, or when needing to 
 
 ## 🌱 TESTING
 
-I added Unit Tests in essential areas of the application to confirm that individual components perform as expected.
-For integration tests, I utilised the [Page Object pattern](https://martinfowler.com/bliki/PageObject.html). Each screen (LotteryDrawsView, TabDrawDetailsView) has a corresponding page object class (LotteryDrawsScreen, TabDrawDetailsScreen) that encapsulates the interactions with that screen.
-I haven't added UI snapshot tests, but I would implement them using the [point-free snapshot library](https://github.com/pointfreeco/swift-snapshot-testing) to ensure all required screen sizes and orientations are thoroughly tested.
+-  I added Unit Tests in essential areas of the application to confirm that individual components perform as expected.
+-  For integration tests, I utilised the [Page Object pattern](https://martinfowler.com/bliki/PageObject.html). Each screen (LotteryDrawsView, TabDrawDetailsView) has a corresponding page object class (LotteryDrawsScreen, TabDrawDetailsScreen) that encapsulates the interactions with that screen.
+-  I haven't added UI snapshot tests, but I would implement them using the [point-free snapshot library](https://github.com/pointfreeco/swift-snapshot-testing) to ensure all required screen sizes and orientations are thoroughly tested.
 
 I appreciate the time you dedicated to reviewing my work.
 
