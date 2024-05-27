@@ -61,4 +61,4 @@ I appreciate the time you dedicated to reviewing my work.
 
 | Details | Tabbed Details |
 | ---- | ---- |
-| ![Details](details.mp4) | ![Tabbed Details](tabbed_details.mp4) |
+| ![Details](Demo/details.mp4) | ![Tabbed Details](Demo/tabbed_details.mp4) |

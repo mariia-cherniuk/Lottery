@@ -66,6 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		370E187A2C04EC27009BD610 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		373C5D072C00C10F0084DAA4 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		373CBC9A2C00C8A5005D24A2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		373CBC9C2C00C9F9005D24A2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 		37E2C3422BFF9F57005C7A88 = {
 			isa = PBXGroup;
 			children = (
+				370E187A2C04EC27009BD610 /* README.md */,
 				373CBCA72C00F9BA005D24A2 /* DesignLibrary */,
 				373CBC9E2C00CA86005D24A2 /* Features */,
 				373C5D072C00C10F0084DAA4 /* Domain */,
