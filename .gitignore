@@ -5,12 +5,15 @@
 *.mode2v3
 *.perspectivev3
 *.xcuserstate
-project.xcworkspace/
+*.xcodeproj/project.xcworkspace/
 xcuserdata/
 DerivedData/
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
+
+# Ignore Xcode project scheme data
+*.xcodeproj/project.xcworkspace/xcuserdata/
 
 # Swift PM #
 ############
