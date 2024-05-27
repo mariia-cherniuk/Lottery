@@ -8,8 +8,8 @@ public class LotteryTicket {
         self.numbers = numbers
     }
     
-    public func hasWon(for result: Lottery) -> Bool {
+    public func hasWon(for lottery: Lottery) -> Bool {
         ///In this app, a ticket is considered a winner if it contain
-        numbers.haveCommonElements(numberOfCummonElements: 1, array: result.numbersAndBonusBall)
+        numbers.haveCommonElements(numberOfCummonElements: 1, array: lottery.numbersAndBonusBall)
     }
 }

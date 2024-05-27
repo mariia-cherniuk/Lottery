@@ -2,10 +2,10 @@ import SwiftUI
 
 public struct BallViewModel {
     
-    public let number: String
+    public let number: Int
     public let colour: Color
     
-    public init(number: String, colour: Color) {
+    public init(number: Int, colour: Color) {
         self.number = number
         self.colour = colour
     }

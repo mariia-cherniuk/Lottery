@@ -16,7 +16,7 @@ public final class LotteryDrawDetailsViewModel: ObservableObject {
         lottery.number4, lottery.number5, lottery.number6
     ]
     
-    private var results: [String] {
+    private var results: [Int] {
         resultNumbers + [bonusBall]
     }
     
@@ -49,8 +49,8 @@ private extension LotteryDrawDetailsViewModel {
     }
     
     func generateLotteryTicket() {
-        let lotteryTicket = useCase.generateTicket(resultNumbers: results)
-        let ticketViewModel = TicketViewModel(lotteryTicket: lotteryTicket)
+        let lotteryTicket = useCase.generateTicket()
+        let ticketViewModel = TicketViewModel(lotteryTicket: lotteryTicket, lottery: lottery)
         tickets.insert(ticketViewModel, at: 0)
     }
 }

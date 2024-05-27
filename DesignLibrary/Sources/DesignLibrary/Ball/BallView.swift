@@ -9,7 +9,7 @@ public struct BallView: View {
     }
     
     public var body: some View {
-        Text(viewModel.number)
+        Text("\(viewModel.number)")
             .font(.caption)
             .fontWeight(.bold)
             .foregroundColor(.white)

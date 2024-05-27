@@ -43,15 +43,6 @@ public struct Lottery: Codable, Hashable {
     }
 }
 
-public struct LotteriesResponse: Codable {
-    
-    public let draws: [Lottery]
-    
-    public init(draws: [Lottery]) {
-        self.draws = draws
-    }
-}
-
 extension Lottery {
     public var numbersAndBonusBall: [Int] {
         [number1, number2, number3, number4, number5, number6, bonusBall]

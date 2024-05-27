@@ -1,5 +1,5 @@
 public protocol TicketGeneratorUseCasePtotocol {
-    func generateTicket(resultNumbers: [String]) -> LotteryTicket
+    func generateTicket() -> LotteryTicket
 }
 
 final class TicketGeneratorUseCase: TicketGeneratorUseCasePtotocol {
@@ -16,7 +16,7 @@ final class TicketGeneratorUseCase: TicketGeneratorUseCasePtotocol {
         self.generator = generator
     }
     
-    func generateTicket(resultNumbers: [String]) -> LotteryTicket {
+    func generateTicket() -> LotteryTicket {
         let numbers = Array(Constant.minTicketNumber ... Constant.maxTicketNumber)
             .shuffled(using: &generator)
             .prefix(Constant.numbersAmount)
