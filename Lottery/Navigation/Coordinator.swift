@@ -6,6 +6,7 @@ final class Coordinator: ObservableObject, LotteriesCoordinating {
     
     enum Destination: Hashable {
         case detail(Lottery)
+        case tabbedDetail([Lottery])
     }
     
     @Published var destinations: [Destination] = []
@@ -17,6 +18,10 @@ final class Coordinator: ObservableObject, LotteriesCoordinating {
     
     func showDetails(_ lottery: Lottery) {
         destinations.append(.detail(lottery))
+    }
+    
+    func showTabbedDetails(_ lotteries: [Lottery]) {
+        destinations.append(.tabbedDetail(lotteries))
     }
     
     func makeLotteryDrawDetailsViewModel(_ lottery: Lottery) -> LotteryDrawDetailsViewModel {

@@ -30,6 +30,11 @@ public final class LotteryDrawsViewModel: ObservableObject {
     func onTap(_ lottery: Lottery) {
         coordinator.showDetails(lottery)
     }
+    
+    func onTabbedTap() {
+        guard case .loaded(let cellViewModels) = state else { return }
+        coordinator.showTabbedDetails(cellViewModels.map(\.lottery))
+    }
 }
 
 private extension LotteryDrawsViewModel {

@@ -44,7 +44,8 @@ private extension LotteryDrawsView {
                 ForEach(lotteryDraws, id: \.id) { lotteryDraw in
                     LotteryDrawCellView(viewModel: lotteryDraw)
                         .onTapGesture {
-                            viewModel.onTap(lotteryDraw.lottery)
+                            viewModel.onTabbedTap()
+                          //  viewModel.onTap(lotteryDraw.lottery)
                         }
                 }
             }
