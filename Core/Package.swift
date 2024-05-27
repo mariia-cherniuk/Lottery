@@ -10,33 +10,14 @@ let package = Package(
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "NetworkManagement",
-            type: .dynamic,
-            targets: ["NetworkManagement"]),
-        .library(
-            name: "Storage",
-            type: .dynamic,
-            targets: ["Storage"]),
-        .library(
-            name: "ProppertyWrappers",
-            type: .dynamic,
-            targets: ["ProppertyWrappers"]),
-        .library(
-            name: "Formatters",
-            type: .dynamic,
-            targets: ["Formatters"]),
-        .library(
-            name: "Logger",
-            type: .dynamic,
-            targets: ["Logger"])
+        .library(name: "CoreFramework", type: .dynamic, targets: ["NetworkManagement", "Storage", "ProppertyWrappers", "Formatters", "Logger"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "NetworkManagement",
-            dependencies: []),
+            dependencies: ["Logger"]),
         .target(
             name: "Storage",
             dependencies: []),

@@ -1,6 +1,7 @@
 import Combine
 import Foundation
 import OSLog
+import Logger
 
 public enum NetworkError: Error {
     case networkError(Error)
@@ -34,13 +35,16 @@ public final class DataLoader: DataLoading {
             
             return data
         } catch let error as URLError where error.code == .notConnectedToInternet {
+            Logger.sharedLogger.info("Error description:\n\(error)")
             throw NetworkError.notConnectedToInternet
         } catch let error as NetworkError {
+            Logger.sharedLogger.info("Error description:\n\(error)")
             ///Fix Swift runtime bug
             ///throw NetworkError.invalidResponse does not exit the method but instead seems to be caught by a last catch block.
             ///The thrown error should be propagated up to the caller, where it can be caught and handled.
             throw error
         } catch {
+            Logger.sharedLogger.info("Error description:\n\(error)")
             throw NetworkError.networkError(error)
         }
     }

@@ -30,7 +30,7 @@ let package = Package(
             dependencies: [
                 .product(name: "LotteriesDomain", package: "Domain"),
                 .product(name: "DesignLibrary", package: "DesignLibrary"),
-                .product(name: "Formatters", package: "Core")
+                .product(name: "CoreFramework", package: "Core")
             ]),
         .testTarget(
             name: "LotteriesFeatureTests",

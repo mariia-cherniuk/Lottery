@@ -1,6 +1,6 @@
 import OSLog
 
-extension Logger {
+public extension Logger {
     
     private static let ordinary = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "Logger")
     

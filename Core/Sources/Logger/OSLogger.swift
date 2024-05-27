@@ -1,18 +1,18 @@
 import OSLog
 
-protocol LoggerProtocol {
+public protocol LoggerProtocol {
     func info(_ message: String)
 }
 
-final class OSLogger: LoggerProtocol {
+public final class OSLogger: LoggerProtocol {
     
     private let logger: Logger
     
-    init(logger: Logger) {
+    public init(logger: Logger) {
         self.logger = logger
     }
     
-    func info(_ message: String) {
+    public func info(_ message: String) {
         logger.info("\(message)")
     }
 }

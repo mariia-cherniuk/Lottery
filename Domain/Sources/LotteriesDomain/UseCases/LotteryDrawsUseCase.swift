@@ -1,6 +1,8 @@
 import Foundation
 import NetworkManagement
 import Formatters
+import Logger
+import OSLog
 
 public protocol LotteryDrawsUseCaseProtocol {
     func fetch() async throws -> [Lottery]
@@ -29,12 +31,23 @@ final class LotteryDrawsUseCase: LotteryDrawsUseCaseProtocol {
             let data = try await dataLoader.fetch(resource: Resource(path: path, method: .GET))
             let response = try jsonDecoder.decode(LotteriesResponse.self, from: data)
             let draws = response.draws
-            try? lotteriesStorage.save(draws) //TODO: ADD logger
+            save(draws)
             return draws
         } catch NetworkError.notConnectedToInternet {
             return try lotteriesStorage.fetchAll()
         } catch {
             throw DomainError.other
+        }
+    }
+}
+
+private extension LotteryDrawsUseCase {
+    
+    func save(_ draws: [Lottery]) {
+        do {
+            try lotteriesStorage.save(draws)
+        } catch {
+            Logger.sharedLogger.info("Error description:\n\(error)")
         }
     }
 }
