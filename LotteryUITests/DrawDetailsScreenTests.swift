@@ -14,11 +14,11 @@ final class DrawDetailsScreenTests: XCTestCase {
             .assertSwipe()
     }
     
-    private func navigateToDrawDetails() -> DrawDetailsScreen {
+    private func navigateToDrawDetails() -> TabDrawDetailsScreen {
         let app = XCUIApplication()
         app.launch()
         
-        let screen = DrawsScreen(app: app)
+        let screen = LotteryDrawsScreen(app: app)
         
         return screen.assertScreenVisible()
             .tapFirstDraw()

@@ -1,7 +1,7 @@
 import XCTest
 import DesignLibrary
 
-final class DrawsScreen {
+final class LotteryDrawsScreen {
     
     private let app: XCUIApplication
     
@@ -15,10 +15,10 @@ final class DrawsScreen {
         return self
     }
     
-    func tapFirstDraw() -> DrawDetailsScreen {
+    func tapFirstDraw() -> TabDrawDetailsScreen {
         app.buttons[AccessibilityIdentifiers.DrawsScreen.draw(at: 0)].tap()
         
         ///Return a new screen, as this action navigates to the next screen
-        return DrawDetailsScreen(app: app)
+        return TabDrawDetailsScreen(app: app)
     }
 }

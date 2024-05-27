@@ -1,7 +1,7 @@
 import XCTest
 import DesignLibrary
 
-final class DrawDetailsScreen {
+final class TabDrawDetailsScreen {
     
     private let app: XCUIApplication
     
