@@ -65,6 +65,13 @@
         "identifier" : "FormattersTests",
         "name" : "FormattersTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Core",
+        "identifier" : "ProppertyWrappersTests",
+        "name" : "ProppertyWrappersTests"
+      }
     }
   ],
   "version" : 1

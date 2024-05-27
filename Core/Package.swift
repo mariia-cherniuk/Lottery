@@ -50,6 +50,9 @@ let package = Package(
             dependencies: ["Storage"]),
         .testTarget(
             name: "FormattersTests",
-            dependencies: ["Formatters"])
+            dependencies: ["Formatters"]),
+        .testTarget(
+            name: "ProppertyWrappersTests",
+            dependencies: ["ProppertyWrappers"])
     ]
 )
