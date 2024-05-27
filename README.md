@@ -17,7 +17,7 @@ Contains:
 - Generate ticket button.
 - [LotteryTicket]
 
-When you tap on Generate ticket, the most recently generated ticket will be displayed at the top of the Your tickets view.
+When you tap on "Generate ticket", the most recently generated ticket will be displayed at the top of the "Your tickets" view.
 In this app, a ticket is considered a winner if it contains at least one number that match the lottery result. 
 Generated tickets are not saved to the local storage! So, when you navigate back to the screen, previously generated tickets will disappear.
 Given more time, I would focus more on accessibility to ensure the app is available to all users.
