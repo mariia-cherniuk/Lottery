@@ -1,5 +1,6 @@
 import Foundation
 import NetworkManagement
+import Formatters
 
 public protocol LotteryDrawsUseCaseProtocol {
     func fetch() async throws -> [Lottery]
@@ -20,7 +21,9 @@ final class LotteryDrawsUseCase: LotteryDrawsUseCaseProtocol {
     func fetch() async throws -> [Lottery] {
         do {
             let data = try await dataLoader.fetch(resource: Resource(path: path, method: .GET))
-            let response = try JSONDecoder().decode(LotteriesResponse.self, from: data)
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(.drawDateFormatter)
+            let response = try decoder.decode(LotteriesResponse.self, from: data)
             let draws = response.draws
             try? lotteriesStorage.save(draws) //TODO: ADD logger
             return draws

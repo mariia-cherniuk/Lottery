@@ -1,4 +1,5 @@
 import ProppertyWrappers
+import Foundation
 
 public struct Lottery: Codable, Hashable {
     
@@ -17,7 +18,7 @@ public struct Lottery: Codable, Hashable {
     }
     
     public let id: String
-    public let drawDate: String
+    public let drawDate: Date
     
     @StringToInt public var number1: Int
     @StringToInt public var number2: Int
@@ -29,7 +30,7 @@ public struct Lottery: Codable, Hashable {
     
     public let topPrize: Int
     
-    public init(id: String, drawDate: String, number1: Int, number2: Int, number3: Int, number4: Int, number5: Int, number6: Int, bonusBall: Int, topPrize: Int) {
+    public init(id: String, drawDate: Date, number1: Int, number2: Int, number3: Int, number4: Int, number5: Int, number6: Int, bonusBall: Int, topPrize: Int) {
         self.id = id
         self.drawDate = drawDate
         self.number1 = number1

@@ -28,7 +28,8 @@ let package = Package(
             dependencies: [
                 .product(name: "NetworkManagement", package: "Core"),
                 .product(name: "Storage", package: "Core"),
-                .product(name: "ProppertyWrappers", package: "Core")
+                .product(name: "ProppertyWrappers", package: "Core"),
+                .product(name: "Formatters", package: "Core")
             ]
         ),
         .testTarget(

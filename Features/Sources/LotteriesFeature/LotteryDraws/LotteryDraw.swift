@@ -1,5 +1,6 @@
 import Foundation
 import LotteriesDomain
+import Formatters
 
 struct LotteryDraw {
 
@@ -10,7 +11,7 @@ struct LotteryDraw {
     }
     
     var date: String {
-        dateFormatter.newFormatStringDate(from: lottery.drawDate, newDateFormat: dateFormat) ?? "Unknown date"
+        dateFormatter.string(from: lottery.drawDate)
     }
     
     var topPrize: String? {
@@ -23,7 +24,7 @@ struct LotteryDraw {
     private let currencyCode: String
     
     init(lottery: Lottery,
-         dateFormatter: DateFormatter = .drawDateFormatter,
+         dateFormatter: DateFormatter = .monthDateFormatter,
          formatter: NumberFormatter = .currency,
          currencyCode: String = "GBP") {
         self.lottery = lottery
