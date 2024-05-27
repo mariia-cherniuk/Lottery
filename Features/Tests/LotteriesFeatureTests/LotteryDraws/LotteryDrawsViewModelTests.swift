@@ -144,7 +144,6 @@ final class LotteryDrawsViewModelTests: XCTestCase {
         XCTAssertEqual(errorModel.message, "Smth went wrong, please try again.")
     }
     
-    // MARK: - Test empty state
     func testNoLotteries_WhenOnAppearIsCalled_ThenStateIsError() {
         mockUseCase.stubResponse = {
             []
