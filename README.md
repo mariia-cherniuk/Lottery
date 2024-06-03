@@ -56,8 +56,6 @@ For more extensive data storage, more sensitive information, or when needing to 
 -  For integration tests, I utilised the [Page Object pattern](https://martinfowler.com/bliki/PageObject.html). Each screen (LotteryDrawsView, TabDrawDetailsView) has a corresponding page object class (LotteryDrawsScreen, TabDrawDetailsScreen) that encapsulates the interactions with that screen.
 -  I haven't added UI snapshot tests, but I would implement them using the [point-free snapshot library](https://github.com/pointfreeco/swift-snapshot-testing) to ensure all required screen sizes and orientations are thoroughly tested.
 
-I appreciate the time you dedicated to reviewing my work.
-
 ## 🌱 How it looks
 
 | Details | Tabbed Details |
